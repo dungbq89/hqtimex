@@ -31,17 +31,17 @@ dev:
       delivery_strategy: none
 
 all:
-  storage:
-    class: myPDOSessionStorage
-    param:
-      session_name: newland_admin
-      db_table: sessions_admin
-      database: doctrine
-      db_id_col: sess_id
-      db_data_col: sess_data
-      db_time_col: sess_time
-      session_cookie_lifetime: 86400
-      session_cookie_httponly: true
+#  storage:
+#    class: myPDOSessionStorage
+#    param:
+#      session_name: newland_admin
+#      db_table: sessions_admin
+#      database: doctrine
+#      db_id_col: sess_id
+#      db_data_col: sess_data
+#      db_time_col: sess_time
+#      session_cookie_lifetime: 86400
+#      session_cookie_httponly: true
   routing:
     class: sfPatternRouting
     param:

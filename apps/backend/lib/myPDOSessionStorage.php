@@ -22,7 +22,6 @@ class myPDOSessionStorage extends sfPDOSessionStorage {
   public function sessionWrite($id, $data) {
     $myContext = sfContext::getInstance();
     $myContext->getEventDispatcher()->notify(new sfEvent($this, 'application.log', array(sprintf('Write session module name "%s" | action name "%s" | data "%s" | id "%s"', $myContext->getModuleName(), $myContext->getActionName(), $data, $id))));
-
     // get table/column
     $db_table = $this->options['db_table'];
     $db_data_col = $this->options['db_data_col'];
