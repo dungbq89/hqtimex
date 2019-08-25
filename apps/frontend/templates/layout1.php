@@ -1,67 +1,44 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Nehob City 1</title>
     <?php include_http_metas() ?>
     <?php include_metas() ?>
     <?php include_title() ?>
     <link rel="shortcut icon" href="/favicon.ico"/>
     <?php include_stylesheets() ?>
     <?php include_javascripts() ?>
-
-    <meta property="og:type" content="article">
-    <meta name="revisit" content="1 days"/>
-    <meta name="robots" content="index,follow"/>
-    <meta name="googlebot" content="index,follow"/>
-    <meta name="language" content="vi-VN"/>
-    <meta name="geo.country" content="VN"/>
-    <meta name="geo.region" content="VN-HN"/>
-    <meta name="geo.placename" content="Hà Nội"/>
-    <meta name="geo.position" content="21.033333;105.85"/>
-    <meta name="dc.publisher" content="tubepthangloi.com"/>
-    <meta name="dc.identifier" content="tubepthangloi.com"/>
-    <meta name="dc.language" content="vi-VN"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <meta http-equiv="Content-Language" content=""/>
+    <meta name="description" content="Nehob Serviced Apartment"/>
+    <meta name="keywords" content="serviced apartment, studio apartment, cheap serviced apartment"/>
+    <meta property="og:site_name" content="companyname">
+    <meta property="og:url" name="og:url" content="" data-app>
+    <meta property="og:type" name="og:type" content="website" data-app>
+    <meta property="og:description" name="og:description" content="Nehob Serviced Apartment" data-app>
+    <meta property="og:title" name="og:title" content="Nehob Serviced Apartment" data-app>
+    <meta property="og:image" name="og:image" content="" data-app>
+    <link href="favicon.png" rel="shortcut icon"/>
+    <meta http-equiv="REFRESH" content="5400"/>
+    <meta name="B-verify" content="5a2027f0e494540dec36ecde8405475e940d4f7a" />
 </head>
+<div id="page">
+    <div class="content">
+        <?php include_component('moduleMenu','header') ?>
 
-<body id="body">
+        <?php echo $sf_content; ?>
 
-
-<div class="wapper">
-    <?php include_component('moduleMenu', 'header') ?>
-
-
-    <div class="menu">
-        <ul class="ls menu-hori fl">
-            <li class="menu-pc"><a href="javascript:void(0)" class="menu-pc-title" rel="nofollow">Danh mục sản phẩm</a>
-                <?php include_component('moduleProduct', 'productMenu') ?>
-
-            </li>
-            <?php include_component('moduleMenu', 'mainMenu') ?>
-        </ul>
-        <ul class="ls menu-right">
-            <li>Hotline: <span>0984.433.494 - 01633.016.868</span>
-
-            </li>
-        </ul>
     </div>
 
-    <?php echo $sf_content;?>
-	<div class="clearfix"></div>
-    <?php include_component('moduleMenu', 'contentFooter'); ?>
-
+    <?php include_component('moduleMenu','headerMobile') ?>
+    <?php include_component('moduleMenu','contentFooter') ?>
 </div>
-
-
-</body>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-96754217-1', 'auto');
-  ga('send', 'pageview');
-
+<script type="text/javascript">
+    $(function () {
+        $('#menu').mmenu();
+    });
 </script>
+</body>
 </html>

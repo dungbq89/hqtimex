@@ -10,12 +10,7 @@ class moduleMenuComponents extends sfComponents
 {
     public function executeMainMenu()
     {
-        $request=sfContext::getInstance()->getRequest();
-        $this->slug_menu=$request->getParameter('slug_menu');
-        $mainMenu=VtpMenuTable::getMenu(0);
-        if (!count($mainMenu))
-            return sfView::NONE;
-        $this->mainMenu=$mainMenu;
+
     }
 
     public function executeMainMenuHome()
