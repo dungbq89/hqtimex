@@ -2,4 +2,4 @@
 ---
 all:
   is_secure:   true
-  credentials: [[admin, product]]
+  credentials: [[admin,product,hq_product]]

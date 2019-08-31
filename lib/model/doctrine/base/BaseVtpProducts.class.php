@@ -29,6 +29,16 @@ Doctrine_Manager::getInstance()->bindComponent('VtpProducts', 'doctrine');
  * @property string $lang
  * @property string $meta
  * @property string $keywords
+ * @property integer $brand
+ * @property integer $reference_price
+ * @property string $unit
+ * @property string $origin
+ * @property string $payment
+ * @property string $delivery
+ * @property string $port
+ * @property string $supply_ability
+ * @property string $packing
+ * @property string $special_req
  * @property VtpProductsCategory $VtpProducts
  * @property Doctrine_Collection $ProductImage
  * 
@@ -54,6 +64,16 @@ Doctrine_Manager::getInstance()->bindComponent('VtpProducts', 'doctrine');
  * @method string              getLang()                 Returns the current record's "lang" value
  * @method string              getMeta()                 Returns the current record's "meta" value
  * @method string              getKeywords()             Returns the current record's "keywords" value
+ * @method integer             getBrand()                Returns the current record's "brand" value
+ * @method integer             getReferencePrice()       Returns the current record's "reference_price" value
+ * @method string              getUnit()                 Returns the current record's "unit" value
+ * @method string              getOrigin()               Returns the current record's "origin" value
+ * @method string              getPayment()              Returns the current record's "payment" value
+ * @method string              getDelivery()             Returns the current record's "delivery" value
+ * @method string              getPort()                 Returns the current record's "port" value
+ * @method string              getSupplyAbility()        Returns the current record's "supply_ability" value
+ * @method string              getPacking()              Returns the current record's "packing" value
+ * @method string              getSpecialReq()           Returns the current record's "special_req" value
  * @method VtpProductsCategory getVtpProducts()          Returns the current record's "VtpProducts" value
  * @method Doctrine_Collection getProductImage()         Returns the current record's "ProductImage" collection
  * @method VtpProducts         setProductName()          Sets the current record's "product_name" value
@@ -78,6 +98,16 @@ Doctrine_Manager::getInstance()->bindComponent('VtpProducts', 'doctrine');
  * @method VtpProducts         setLang()                 Sets the current record's "lang" value
  * @method VtpProducts         setMeta()                 Sets the current record's "meta" value
  * @method VtpProducts         setKeywords()             Sets the current record's "keywords" value
+ * @method VtpProducts         setBrand()                Sets the current record's "brand" value
+ * @method VtpProducts         setReferencePrice()       Sets the current record's "reference_price" value
+ * @method VtpProducts         setUnit()                 Sets the current record's "unit" value
+ * @method VtpProducts         setOrigin()               Sets the current record's "origin" value
+ * @method VtpProducts         setPayment()              Sets the current record's "payment" value
+ * @method VtpProducts         setDelivery()             Sets the current record's "delivery" value
+ * @method VtpProducts         setPort()                 Sets the current record's "port" value
+ * @method VtpProducts         setSupplyAbility()        Sets the current record's "supply_ability" value
+ * @method VtpProducts         setPacking()              Sets the current record's "packing" value
+ * @method VtpProducts         setSpecialReq()           Sets the current record's "special_req" value
  * @method VtpProducts         setVtpProducts()          Sets the current record's "VtpProducts" value
  * @method VtpProducts         setProductImage()         Sets the current record's "ProductImage" collection
  * 
@@ -205,6 +235,56 @@ abstract class BaseVtpProducts extends sfDoctrineRecord
         $this->hasColumn('keywords', 'string', 255, array(
              'type' => 'string',
              'comment' => 'Nội dung keywords',
+             'length' => 255,
+             ));
+        $this->hasColumn('brand', 'integer', 22, array(
+             'type' => 'integer',
+             'comment' => 'Hãng sản xuất',
+             'length' => 22,
+             ));
+        $this->hasColumn('reference_price', 'integer', 22, array(
+             'type' => 'integer',
+             'comment' => 'gia tham khao',
+             'length' => 22,
+             ));
+        $this->hasColumn('unit', 'string', 255, array(
+             'type' => 'string',
+             'comment' => 'Mệnh giá',
+             'length' => 255,
+             ));
+        $this->hasColumn('origin', 'string', 255, array(
+             'type' => 'string',
+             'comment' => 'Nguồn gốc',
+             'length' => 255,
+             ));
+        $this->hasColumn('payment', 'string', 255, array(
+             'type' => 'string',
+             'comment' => 'Thanh toán',
+             'length' => 255,
+             ));
+        $this->hasColumn('delivery', 'string', 255, array(
+             'type' => 'string',
+             'comment' => 'Vận chuyển',
+             'length' => 255,
+             ));
+        $this->hasColumn('port', 'string', 255, array(
+             'type' => 'string',
+             'comment' => 'Hải quan',
+             'length' => 255,
+             ));
+        $this->hasColumn('supply_ability', 'string', 255, array(
+             'type' => 'string',
+             'comment' => 'Khả năng cung cấp',
+             'length' => 255,
+             ));
+        $this->hasColumn('packing', 'string', 255, array(
+             'type' => 'string',
+             'comment' => 'Đóng kiện',
+             'length' => 255,
+             ));
+        $this->hasColumn('special_req', 'string', 255, array(
+             'type' => 'string',
+             'comment' => 'Yêu cầu',
              'length' => 255,
              ));
     }
