@@ -1,3 +1,12 @@
+hq_brand:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                HqBrand
+    module:               HqBrand
+    prefix_path:          /HqBrand
+    column:               id
+    with_wildcard_routes: true
+
 ad_feed_back:
   class: sfDoctrineRouteCollection
   options:

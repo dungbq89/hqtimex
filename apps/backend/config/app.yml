@@ -29,6 +29,25 @@ all:
               credentials: [[admin,news_editor,news_approved,news_public, ctv]]
               route: ad_article_adArticlesPublish
               icon: text.png
+        Phân hệ sản phẩm:
+          credentials: [[admin,product]]
+          dropdown:
+            Danh sách chuyên mục sản phẩm:
+              credentials: [[admin,product,hq_product_cat]]
+              route: vtp_products_category
+              icon: text.png
+            Danh sách sản phẩm:
+              credentials: [[admin,product,hq_product]]
+              route: vtp_products
+              icon: text.png
+            Danh sách ảnh sản phẩm:
+              credentials: [[admin,product,hq_product_image]]
+              route: vtp_product_image
+              icon: text.png
+            Danh sách nhà cung cấp:
+              credentials: [[admin,product,hq_brand]]
+              route: hq_brand
+              icon: text.png
         Phân hệ khác:
           credentials: [[admin,subAdmin, ctv]]
           dropdown:
