@@ -1,2 +1,12 @@
-detail:
-   enabled: true
+description:
+  enabled: true
+  lifetime: 300
+roomHot:
+  enabled: true
+  lifetime: 300
+roomListHome:
+  enabled: true
+  lifetime: 300
+slide:
+  enabled: true
+  lifetime: 300

@@ -1,0 +1,33 @@
+generator:
+  class: tmcTwitterBootstrapDoctrineGenerator
+  param:
+    model_class:           HqBrand
+    theme:                 tmcTwitterBootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          hq_brand
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        name: {label: Tên nhà cung cấp}
+        is_active: {label: Trạng thái}
+        image: {label: Ảnh đại diện}
+      list:
+        title: "Quản lý nhà cung cấp"
+        display: [name, image, is_active]
+      filter:
+        display: [name]
+      form:
+        display: [name, image, is_active]
+        class: HqBrandFormAdmin
+      edit:
+        title: "Cập nhập nhà cung cấp"
+      new:
+        title: "Thêm mới nhà cung cấp"
+      show:    ~
+      revert:  ~

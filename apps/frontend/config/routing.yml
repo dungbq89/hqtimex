@@ -34,10 +34,6 @@ article_detail:
   url: /bai-viet/:slug
   param: {module: pageNewsDetails, action: index}
 
-products:
-  url: /chuyen-muc/:slug/:page
-  param: {module: pageProduct, action: index, page:''}
-  
 product_all:
   url: /all/:page
   param: {module: pageProduct, action: list, page:''}
