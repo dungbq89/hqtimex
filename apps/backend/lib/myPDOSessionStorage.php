@@ -33,11 +33,11 @@ class myPDOSessionStorage extends sfPDOSessionStorage {
     $user = sfContext::getInstance()->getUser();
     //ngoctv: them vong if de fix loi session time out
     if ($user!=null){
-        $userid = ($user->isAuthenticated()) ? $user->getGuardUser()->getId() : 'N/A';
-    }else{$userid = 'N/A';}
+        $userid = ($user->isAuthenticated()) ? $user->getGuardUser()->getId() : '-1';
+    }else{$userid = '-1';}
     
     //remove old session
-    if ($userid != 'N/A') {
+    if ($userid != '-1') {
       $deletesql = 'DELETE FROM ' . $db_table . ' WHERE sess_userid = ? AND ' . $db_id_col . ' != ?';
 
       try {

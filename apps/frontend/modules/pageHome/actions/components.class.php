@@ -35,4 +35,14 @@ class pageHomeComponents extends sfComponents
             return sfView::NONE;
         }
     }
+
+    public function executeDepartment($request)
+    {
+
+    }
+
+    public function executeSlideShow($request)
+    {
+
+    }
 }

@@ -8,7 +8,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-6">
                         <div class="follow_us">
-                            <label>Follow Us:</label>
+                            <label><?php echo __('Follow Us'); ?>:</label>
                             <ul class="follow_link">
                                 <li><a href="#"><i class="ion-social-facebook"></i></a></li>
                                 <li><a href="#"><i class="ion-social-twitter"></i></a></li>
@@ -20,7 +20,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="top_right text-right">
                             <ul>
-                                <li class="language"><a href="#"><img src="./assets/img/logo/language.png" alt="">en-vi<i class="ion-ios-arrow-down"></i></a>
+                                <li class="language"><a href="#"><img src="./assets/img/logo/language.png" alt="">en - vi<i class="ion-ios-arrow-down"></i></a>
                                     <ul class="dropdown_language">
                                         <li><a href="#"><img src="./assets/img/logo/language.png" alt=""> <?php echo __('English'); ?></a></li>
                                         <li><a href="#"><img src="./assets/img/logo/language2.png" alt=""> <?php echo __('Vietnamese'); ?></a></li>
@@ -41,7 +41,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-6">
                     <div class="logo">
-                        <a href="index.html"><img src="./assets/img/logo/logo.png" alt=""></a>
+                        <a href="<?php echo url_for('homepage'); ?>"><img src="../images/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-6">
@@ -49,7 +49,7 @@
                         <div class="search-container">
                             <form action="#">
                                 <div class="search_box">
-                                    <input placeholder="Search entire store here ..." type="text">
+                                    <input placeholder="<?php echo __('Search entire store here'); ?> ..." type="text">
                                     <button type="submit"><i class="ion-ios-search-strong"></i></button>
                                 </div>
                             </form>
@@ -112,7 +112,7 @@
                     </div>
                     <div class="top_right text-right">
                         <ul>
-                            <li class="language"><a href="#"><img src="./assets/img/logo/language.png" alt="">en-vi<i class="ion-ios-arrow-down"></i></a>
+                            <li class="language"><a href="#"><img src="./assets/img/logo/language.png" alt="">en - vi<i class="ion-ios-arrow-down"></i></a>
                                 <ul class="dropdown_language">
                                     <li><a href="#"><img src="./assets/img/logo/language.png" alt=""><?php echo __('English'); ?></a></li>
                                     <li><a href="#"><img src="./assets/img/logo/language2.png" alt=""><?php echo __('Vietnamese'); ?></a></li>
