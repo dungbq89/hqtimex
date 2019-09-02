@@ -63,4 +63,9 @@ class moduleMenuComponents extends sfComponents
         $this->listAlbum = AdAlbumTable::getAllAlbum()->fetchArray();
     }
 
+    public function executeBreadscrumbs($request)
+    {
+        $this->arrBread = $this->getVar('arrBread');
+    }
+
 }

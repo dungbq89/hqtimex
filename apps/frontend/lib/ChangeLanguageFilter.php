@@ -18,7 +18,7 @@ class ChangeLanguageFilter extends sfFilter
             $sfContext->getUser()->setCulture($lang);
         } else {
             if (sfContext::getInstance()->getUser()->getCulture() == '' || sfContext::getInstance()->getUser()->getCulture() == null) {
-                $sfContext->getUser()->setCulture('vi');
+                $sfContext->getUser()->setCulture('en');
             }
         }
         $filterChain->execute();

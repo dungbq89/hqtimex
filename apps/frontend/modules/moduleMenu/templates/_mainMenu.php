@@ -20,10 +20,13 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="top_right text-right">
                             <ul>
-                                <li class="language"><a href="#"><img src="./assets/img/logo/language.png" alt="">en - vi<i class="ion-ios-arrow-down"></i></a>
+                                <li class="language"><a href="javascript:void(0);"><img src="./assets/img/logo/language.png" alt="">en -
+                                        vi<i class="ion-ios-arrow-down"></i></a>
                                     <ul class="dropdown_language">
-                                        <li><a href="#"><img src="./assets/img/logo/language.png" alt=""> <?php echo __('English'); ?></a></li>
-                                        <li><a href="#"><img src="./assets/img/logo/language2.png" alt=""> <?php echo __('Vietnamese'); ?></a></li>
+                                        <li><a href="<?php echo url_for('homepage', array('lang' => 'en')); ?>"><img src="./assets/img/logo/language.png"
+                                                             alt=""> <?php echo __('English'); ?></a></li>
+                                        <li><a href="<?php echo url_for('homepage', array('lang' => 'vi')); ?>"><img src="./assets/img/logo/language2.png"
+                                                             alt=""> <?php echo __('Vietnamese'); ?></a></li>
                                     </ul>
                                 </li>
 
@@ -81,7 +84,7 @@
 
                                 <li><a href="#"><?php echo __('Services'); ?></a></li>
                                 <li><a href="#"><?php echo __('News'); ?></a></li>
-                                <li><a href="#"><?php echo __('About Us'); ?></a></li>
+                                <li><a href="<?php echo url_for('about_us'); ?>"><?php echo __('About Us'); ?></a></li>
                                 <li><a href="#"><?php echo __('Contact Us'); ?></a></li>
                             </ul>
                         </nav>
@@ -112,10 +115,14 @@
                     </div>
                     <div class="top_right text-right">
                         <ul>
-                            <li class="language"><a href="#"><img src="./assets/img/logo/language.png" alt="">en - vi<i class="ion-ios-arrow-down"></i></a>
+                            <li class="language"><a href="javascript:void(0);"><img src="./assets/img/logo/language.png" alt="">en - vi<i
+                                            class="ion-ios-arrow-down"></i></a>
                                 <ul class="dropdown_language">
-                                    <li><a href="#"><img src="./assets/img/logo/language.png" alt=""><?php echo __('English'); ?></a></li>
-                                    <li><a href="#"><img src="./assets/img/logo/language2.png" alt=""><?php echo __('Vietnamese'); ?></a></li>
+                                    <li><a href="<?php echo url_for('homepage', array('lang' => 'en')); ?>"><img
+                                                    src="./assets/img/logo/language.png"
+                                                    alt=""><?php echo __('English'); ?></a></li>
+                                    <li><a href="<?php echo url_for('homepage', array('lang' => 'vi')); ?>"><img src="./assets/img/logo/language2.png"
+                                                         alt=""><?php echo __('Vietnamese'); ?></a></li>
                                 </ul>
                             </li>
                         </ul>
