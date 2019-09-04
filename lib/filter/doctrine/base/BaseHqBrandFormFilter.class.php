@@ -17,6 +17,7 @@ abstract class BaseHqBrandFormFilter extends BaseFormFilterDoctrine
       'image'       => new sfWidgetFormFilterInput(),
       'description' => new sfWidgetFormFilterInput(),
       'parent_id'   => new sfWidgetFormFilterInput(),
+      'priority'    => new sfWidgetFormFilterInput(),
       'is_active'   => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
       'lang'        => new sfWidgetFormFilterInput(),
     ));
@@ -26,6 +27,7 @@ abstract class BaseHqBrandFormFilter extends BaseFormFilterDoctrine
       'image'       => new sfValidatorPass(array('required' => false)),
       'description' => new sfValidatorPass(array('required' => false)),
       'parent_id'   => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'priority'    => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'is_active'   => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
       'lang'        => new sfValidatorPass(array('required' => false)),
     ));
@@ -52,6 +54,7 @@ abstract class BaseHqBrandFormFilter extends BaseFormFilterDoctrine
       'image'       => 'Text',
       'description' => 'Text',
       'parent_id'   => 'Number',
+      'priority'    => 'Number',
       'is_active'   => 'Boolean',
       'lang'        => 'Text',
     );

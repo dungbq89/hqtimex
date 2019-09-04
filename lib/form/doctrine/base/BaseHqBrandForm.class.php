@@ -20,6 +20,7 @@ abstract class BaseHqBrandForm extends BaseFormDoctrine
       'image'       => new sfWidgetFormInputText(),
       'description' => new sfWidgetFormTextarea(),
       'parent_id'   => new sfWidgetFormInputText(),
+      'priority'    => new sfWidgetFormInputText(),
       'is_active'   => new sfWidgetFormInputCheckbox(),
       'lang'        => new sfWidgetFormInputText(),
     ));
@@ -30,6 +31,7 @@ abstract class BaseHqBrandForm extends BaseFormDoctrine
       'image'       => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'description' => new sfValidatorString(array('required' => false)),
       'parent_id'   => new sfValidatorInteger(array('required' => false)),
+      'priority'    => new sfValidatorInteger(array('required' => false)),
       'is_active'   => new sfValidatorBoolean(array('required' => false)),
       'lang'        => new sfValidatorString(array('max_length' => 10, 'required' => false)),
     ));

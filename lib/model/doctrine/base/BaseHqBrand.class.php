@@ -11,6 +11,7 @@ Doctrine_Manager::getInstance()->bindComponent('HqBrand', 'doctrine');
  * @property string $image
  * @property clob $description
  * @property integer $parent_id
+ * @property integer $priority
  * @property boolean $is_active
  * @property string $lang
  * 
@@ -18,12 +19,14 @@ Doctrine_Manager::getInstance()->bindComponent('HqBrand', 'doctrine');
  * @method string  getImage()       Returns the current record's "image" value
  * @method clob    getDescription() Returns the current record's "description" value
  * @method integer getParentId()    Returns the current record's "parent_id" value
+ * @method integer getPriority()    Returns the current record's "priority" value
  * @method boolean getIsActive()    Returns the current record's "is_active" value
  * @method string  getLang()        Returns the current record's "lang" value
  * @method HqBrand setName()        Sets the current record's "name" value
  * @method HqBrand setImage()       Sets the current record's "image" value
  * @method HqBrand setDescription() Sets the current record's "description" value
  * @method HqBrand setParentId()    Sets the current record's "parent_id" value
+ * @method HqBrand setPriority()    Sets the current record's "priority" value
  * @method HqBrand setIsActive()    Sets the current record's "is_active" value
  * @method HqBrand setLang()        Sets the current record's "lang" value
  * 
@@ -56,6 +59,11 @@ abstract class BaseHqBrand extends sfDoctrineRecord
         $this->hasColumn('parent_id', 'integer', 5, array(
              'type' => 'integer',
              'comment' => 'Danh mục cha',
+             'length' => 5,
+             ));
+        $this->hasColumn('priority', 'integer', 5, array(
+             'type' => 'integer',
+             'comment' => 'Độ ưu tiên hiển thị',
              'length' => 5,
              ));
         $this->hasColumn('is_active', 'boolean', null, array(

@@ -20,6 +20,9 @@ generator:
       list:
         title: "Quản lý nhà cung cấp"
         display: [name, image, is_active]
+        object_actions:
+          _edit: {label: Chi tiết}
+          _delete: ~
       filter:
         display: [name]
       form:
