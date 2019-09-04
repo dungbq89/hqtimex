@@ -9,17 +9,23 @@ Doctrine_Manager::getInstance()->bindComponent('HqBrand', 'doctrine');
  * 
  * @property string $name
  * @property string $image
+ * @property clob $description
+ * @property integer $parent_id
  * @property boolean $is_active
  * @property string $lang
  * 
- * @method string  getName()      Returns the current record's "name" value
- * @method string  getImage()     Returns the current record's "image" value
- * @method boolean getIsActive()  Returns the current record's "is_active" value
- * @method string  getLang()      Returns the current record's "lang" value
- * @method HqBrand setName()      Sets the current record's "name" value
- * @method HqBrand setImage()     Sets the current record's "image" value
- * @method HqBrand setIsActive()  Sets the current record's "is_active" value
- * @method HqBrand setLang()      Sets the current record's "lang" value
+ * @method string  getName()        Returns the current record's "name" value
+ * @method string  getImage()       Returns the current record's "image" value
+ * @method clob    getDescription() Returns the current record's "description" value
+ * @method integer getParentId()    Returns the current record's "parent_id" value
+ * @method boolean getIsActive()    Returns the current record's "is_active" value
+ * @method string  getLang()        Returns the current record's "lang" value
+ * @method HqBrand setName()        Sets the current record's "name" value
+ * @method HqBrand setImage()       Sets the current record's "image" value
+ * @method HqBrand setDescription() Sets the current record's "description" value
+ * @method HqBrand setParentId()    Sets the current record's "parent_id" value
+ * @method HqBrand setIsActive()    Sets the current record's "is_active" value
+ * @method HqBrand setLang()        Sets the current record's "lang" value
  * 
  * @package    symfony
  * @subpackage model
@@ -42,6 +48,15 @@ abstract class BaseHqBrand extends sfDoctrineRecord
              'notnull' => false,
              'comment' => 'anh dai dien',
              'length' => 255,
+             ));
+        $this->hasColumn('description', 'clob', null, array(
+             'type' => 'clob',
+             'notnull' => false,
+             ));
+        $this->hasColumn('parent_id', 'integer', 5, array(
+             'type' => 'integer',
+             'comment' => 'Danh mục cha',
+             'length' => 5,
              ));
         $this->hasColumn('is_active', 'boolean', null, array(
              'type' => 'boolean',
