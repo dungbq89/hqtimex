@@ -44,9 +44,40 @@ class HqBrandFormAdmin extends BaseHqBrandForm
             'is_active' => new sfValidatorBoolean(array('required' => false)),
         ));
 
+        $this->widgetSchema['priority'] = new sfWidgetFormInputText(array('default' => 0), array('size' => 5, 'maxlength' => 5));
+        $this->validatorSchema['priority'] = new sfValidatorInteger(array('required' => false, "min" => 0, 'max' => 99999, 'trim' => true), array('min' => $i18n->__('Thứ tự phải là số nguyên dương'), 'max' => $i18n->__('Tối đa 5 ký tự'), 'invalid' => $i18n->__('Thứ tự phải là số nguyên dương')));
+
+        $this->widgetSchema['description'] = new sfWidgetFormTextarea();
+        $this->validatorSchema['description'] = new sfValidatorString(array('required' => false, 'trim' => true, 'max_length' => 1000));
+
+        $this->widgetSchema['parent_id'] = new sfWidgetFormChoice(array(
+            'choices' => $this->getParentByType($this->getObject()->get('id')),
+            'multiple' => false,
+            'expanded' => false
+        ));
+        $this->validatorSchema['parent_id'] = new sfValidatorChoice(array(
+            'required' => FALSE,
+            'choices' => array_keys($this->getParentByType($this->getObject()->get('id'))),
+        ));
+
         $this->widgetSchema->setNameFormat('hq_brand[%s]');
 
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
 
     }
+
+
+    protected function getParentByType($id)
+    {
+        $i18n = sfContext::getInstance()->getI18N();
+        $arrBrand = ['' => $i18n->__('-- Chọn nhà cung cấp cha --')];
+        $brands = HqBrandTable::getAllBrand();
+        foreach ($brands as $brand) {
+            if($id != $brand->id){
+                $arrBrand[$brand->id] = $brand->name;
+            }
+        }
+        return $arrBrand;
+    }
+
 }

@@ -17,16 +17,19 @@ generator:
         name: {label: Tên nhà cung cấp}
         is_active: {label: Trạng thái}
         image: {label: Ảnh đại diện}
+        priority: {label: Thứ tự hiển thị}
+        description: {label: Mô tả}
+        parent_id: {label: Danh mục cha}
       list:
         title: "Quản lý nhà cung cấp"
-        display: [name, image, is_active]
+        display: [name, parent_id, priority, is_active]
         object_actions:
           _edit: {label: Chi tiết}
           _delete: ~
       filter:
         display: [name]
       form:
-        display: [name, image, is_active]
+        display: [name, parent_id, image, description, priority, is_active]
         class: HqBrandFormAdmin
       edit:
         title: "Cập nhập nhà cung cấp"

@@ -21,4 +21,11 @@ class HqBrandTable extends Doctrine_Table
     {
         return HqBrandTable::getInstance()->createQuery()->andWhere('is_active=?', 1)->execute();
     }
+
+    public static function getBrandById($id)
+    {
+        return HqBrandTable::getInstance()->createQuery()
+            ->andWhere('id=?', $id)
+            ->fetchOne();
+    }
 }
