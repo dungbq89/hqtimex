@@ -17,18 +17,7 @@ class VtpProductsCategoryFormAdmin extends BaseVtpProductsCategoryForm
         $i18n = sfContext::getInstance()->getI18N();
         unset($this['created_by'], $this['updated_by'], $this['created_at'], $this['updated_at']);
         $this->setWidgets(array(
-            'parameter_ids' => new sfWidgetFormChoice(array(
-                'choices' => $parameter_ids,
-                'multiple' => true,
-                'expanded' => false,
-            ), array()),
-            'id' => new sfWidgetFormInputHidden(),
             'name' => new sfWidgetFormInputText(),
-            'lat' => new sfWidgetFormInputText(),
-            'log' => new sfWidgetFormInputText(),
-            'email' => new sfWidgetFormInputText(),
-            'msisdn' => new sfWidgetFormInputText(),
-            'address' => new sfWidgetFormInputText(),
             'image_path' => new sfWidgetFormInputFileEditable(array(
                 'label' => ' ',
                 'file_src' => VtHelper::getUrlImagePathThumb(sfConfig::get('app_category_images'), $this->getObject()->getImagePath()),
@@ -38,22 +27,11 @@ class VtpProductsCategoryFormAdmin extends BaseVtpProductsCategoryForm
             )),
             'link' => new sfWidgetFormInputText(),
             'priority' => new sfWidgetFormInputText(array('default' => 0), array('size' => 5, 'maxlength' => 5)),
-            'is_home' => new sfWidgetFormInputCheckbox(),
             'is_active' => new sfWidgetFormInputCheckbox(),
-            'show_banner' => new sfWidgetFormInputCheckbox(),
-            'description' => new sfWidgetFormTextarea(),
             'lang' => new sfWidgetFormInputText(),
-            'meta' => new sfWidgetFormTextarea(array(), array('style' => 'width:690px')),
-            'keywords' => new sfWidgetFormTextarea(array(), array('style' => 'width:690px')),
         ));
 
         $this->setValidators(array(
-            'parameter_ids' => new sfValidatorChoice(array(
-                'choices' => array_keys($parameter_ids),
-                'required' => false,
-                'multiple' => true,
-            ), array()),
-            'id' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
             'name' => new sfValidatorString(array('max_length' => 255, 'trim' => true, 'required' => true)),
             'image_path' => new sfValidatorFileViettel(
                 array(
@@ -70,27 +48,12 @@ class VtpProductsCategoryFormAdmin extends BaseVtpProductsCategoryForm
             ),
             'link' => new sfValidatorString(array('max_length' => 255, 'trim' => true, 'required' => false)),
             'priority' => new sfValidatorInteger(array('required' => false, "min" => 0, 'trim' => true), array('min' => $i18n->__('Giá trị không phải là số âm'), 'invalid' => $i18n->__('Giá trị phải là kiểu số nguyên dương'))),
-            'is_home' => new sfValidatorBoolean(array('required' => false)),
             'is_active' => new sfValidatorBoolean(array('required' => false)),
-            'show_banner' => new sfValidatorBoolean(array('required' => false)),
-            'description' => new sfValidatorString(array('max_length' => 3000, 'required' => false)),
-            'lang' => new sfValidatorString(array('max_length' => 10)),
-            'meta' => new sfValidatorString(array('max_length' => 255, 'required' => false, 'trim' => true)),
-            'keywords' => new sfValidatorString(array('max_length' => 255, 'required' => false, 'trim' => true)),
-
-            'lat' => new sfValidatorString(array('max_length' => 25, 'required' => false, 'trim' => true)),
-            'log' => new sfValidatorString(array('max_length' => 25, 'required' => false, 'trim' => true)),
-            'email' => new sfValidatorString(array('max_length' => 255, 'required' => false, 'trim' => true)),
-            'msisdn' => new sfValidatorString(array('max_length' => 25, 'required' => false, 'trim' => true)),
-            'address' => new sfValidatorString(array('max_length' => 255, 'required' => false, 'trim' => true)),
+            'lang' => new sfValidatorPass(),
         ));
         $this->widgetSchema['portal_id'] = new sfWidgetFormInputText(array(), array('disabled' => 'false'));
         $this->validatorSchema['portal_id'] = new sfValidatorString(array('max_length' => 25, 'required' => false, 'trim' => true));
-//      $this->validatorSchema['priority'] = new sfValidatorRegex(array(
-//            'pattern' => '/^[0-9]+$/'
-//                ), array(
-//            'invalid' => "Bạn phải nhập số nguyên dương",
-//        ));
+
         $this->setDefault('priority', null);
 
         $this->widgetSchema['parent_id'] = new sfWidgetFormChoice(array(
@@ -99,11 +62,10 @@ class VtpProductsCategoryFormAdmin extends BaseVtpProductsCategoryForm
             'expanded' => false
         ));
         $this->validatorSchema['parent_id'] = new sfValidatorChoice(array(
-            'required' => FALSE,
+            'required' => false,
             'choices' => array_keys($this->getParentByType($this->getObject()->get('id'))),
         ));
 
-//        $this->validatorSchema->setPostValidator(new sfValidatorDoctrineUnique(array('model' => 'VtpProductsCategory', 'column' => 'name')));
         $this->widgetSchema->setNameFormat('vtp_products_category[%s]');
 
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);

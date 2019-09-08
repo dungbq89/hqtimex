@@ -12,29 +12,6 @@ class pageHomeComponents extends sfComponents
     {
         $this->slide = AdAdvertiseTable::getAdvertiseV2('homepage');
     }
-    public function executeBooking(sfWebRequest $request)
-    {
-        $this->form = new FormBooking();
-    }
-    public function executeRoomListHome(sfWebRequest $request)
-    {
-        $productHome = VtpProductsTable::getHomeProducts(10);
-        if($productHome){
-            $this->products = $productHome;
-        }else{
-            return sfView::NONE;
-        }
-    }
-
-    public function executeRoomHot(sfWebRequest $request)
-    {
-        $productHot = VtpProductsTable::getHotProducts(4);
-        if($productHot){
-            $this->products = $productHot;
-        }else{
-            return sfView::NONE;
-        }
-    }
 
     public function executeDepartment($request)
     {

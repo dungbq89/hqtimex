@@ -26,4 +26,9 @@ class pageIntroductionActions extends sfActions
         }
     }
 
+    public function executeContact(sfWebRequest $request)
+    {
+
+    }
+
 }

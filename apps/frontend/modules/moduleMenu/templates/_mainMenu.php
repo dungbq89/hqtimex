@@ -85,7 +85,7 @@
                                 <li><a href="#"><?php echo __('Services'); ?></a></li>
                                 <li><a href="#"><?php echo __('News'); ?></a></li>
                                 <li><a href="<?php echo url_for('about_us'); ?>"><?php echo __('About Us'); ?></a></li>
-                                <li><a href="#"><?php echo __('Contact Us'); ?></a></li>
+                                <li><a href="<?php echo url_for('contact_us'); ?>"><?php echo __('Contact Us'); ?></a></li>
                             </ul>
                         </nav>
                     </div>
@@ -159,8 +159,8 @@
 
                             <li><a href="#"><?php echo __('Services'); ?></a></li>
                             <li><a href="#"><?php echo __('News'); ?></a></li>
-                            <li><a href="#"><?php echo __('About Us'); ?></a></li>
-                            <li><a href="#"><?php echo __('Contact Us'); ?></a></li>
+                            <li><a href="<?php echo url_for('about_us'); ?>"><?php echo __('About Us'); ?></a></li>
+                            <li><a href="<?php echo url_for('contact_us'); ?>"><?php echo __('Contact Us'); ?></a></li>
                         </ul>
                     </div>
                 </div>
