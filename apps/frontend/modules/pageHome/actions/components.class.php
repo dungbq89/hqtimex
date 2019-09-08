@@ -31,4 +31,20 @@ class pageHomeComponents extends sfComponents
     {
 
     }
+
+    public function executeProductCategoryHot($request)
+    {
+        $data = array();
+        $categoriesHot = VtpProductsCategoryTable::getListCategoryHome();
+        if($categoriesHot){
+            foreach ($categoriesHot as $category){
+                $productsHot = VtpProductsTable::getProductHotByCatId($category['id'], 10);
+                $category['products'] = $productsHot;
+                $data[] = $category;
+            }
+            $this->data = $data;
+        }else{
+            return sfView::NONE;
+        }
+    }
 }

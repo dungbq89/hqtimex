@@ -59,9 +59,10 @@ class VtpProductsCategoryTable extends Doctrine_Table
     {
         $sql = VtpProductsCategoryTable::getInstance()->createQuery()
             ->select('id, name, image_path, link, priority, description, slug')
-            ->andWhere('is_active=1')
-            ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
-            ->orderBy('priority asc');
+            ->where('is_active=1')
+            ->andWhere('is_home=1')
+//            ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
+            ->orderBy('priority DESC');
         return $sql->fetchArray();
     }
 

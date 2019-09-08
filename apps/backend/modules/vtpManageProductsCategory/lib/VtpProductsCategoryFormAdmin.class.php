@@ -27,6 +27,7 @@ class VtpProductsCategoryFormAdmin extends BaseVtpProductsCategoryForm
             )),
             'link' => new sfWidgetFormInputText(),
             'priority' => new sfWidgetFormInputText(array('default' => 0), array('size' => 5, 'maxlength' => 5)),
+            'is_home' => new sfWidgetFormInputCheckbox(),
             'is_active' => new sfWidgetFormInputCheckbox(),
             'lang' => new sfWidgetFormInputText(),
         ));
@@ -48,6 +49,7 @@ class VtpProductsCategoryFormAdmin extends BaseVtpProductsCategoryForm
             ),
             'link' => new sfValidatorString(array('max_length' => 255, 'trim' => true, 'required' => false)),
             'priority' => new sfValidatorInteger(array('required' => false, "min" => 0, 'trim' => true), array('min' => $i18n->__('Giá trị không phải là số âm'), 'invalid' => $i18n->__('Giá trị phải là kiểu số nguyên dương'))),
+            'is_home' => new sfValidatorBoolean(array('required' => false)),
             'is_active' => new sfValidatorBoolean(array('required' => false)),
             'lang' => new sfValidatorPass(),
         ));
