@@ -28,4 +28,16 @@ class HqBrandTable extends Doctrine_Table
             ->andWhere('id=?', $id)
             ->fetchOne();
     }
+
+    public static function getBrandByParentID($parentId, $limit = null)
+    {
+        $query = HqBrandTable::getInstance()->createQuery()
+            ->where(($parentId != '') ? 'parent_id=?' : '(parent_id=? or parent_id is null)', $parentId)
+            ->andWhere('is_active=1')
+            ->orderby('priority desc');
+        if ($limit != null) {
+            $query->limit($limit);
+        }
+        return $query->fetchArray();
+    }
 }

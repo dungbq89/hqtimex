@@ -82,11 +82,11 @@ class VtpProductsCategoryTable extends Doctrine_Table
         $query = VtpProductsCategoryTable::getInstance()->createQuery()
             ->where(($parentId != '') ? 'parent_id=?' : '(parent_id=? or parent_id is null)', $parentId)
             ->andWhere('is_active=1')
-            ->orderby('priority asc');
+            ->orderby('priority desc');
         if ($limit != null) {
             $query->limit($limit);
         }
-        return $query->execute();
+        return $query->fetchArray();
     }
 
     public static function getCategoryById($id)

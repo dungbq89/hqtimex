@@ -15,7 +15,16 @@ class pageHomeComponents extends sfComponents
 
     public function executeDepartment($request)
     {
-
+        $department = HqBrandTable::getBrandByParentID(null, 10);
+        $data = array();
+        if($department && count($department)){
+            foreach ($department as $depart){
+                $departChild = HqBrandTable::getBrandByParentID($depart['id'], 10);
+                $depart['childs'] = $departChild;
+                $data[] = $depart;
+            }
+        }
+        $this->data = $data;
     }
 
     public function executeSlideShow($request)

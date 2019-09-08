@@ -10,7 +10,16 @@ class moduleMenuComponents extends sfComponents
 {
     public function executeMainMenu()
     {
-
+        $category = VtpProductsCategoryTable::getCategoryByParentID(null, 10);
+        $data = array();
+        if($category && count($category)){
+            foreach ($category as $cate){
+                $catChild = VtpProductsCategoryTable::getCategoryByParentID($cate['id'], 10);
+                $cate['childs'] = $catChild;
+                $data[] = $cate;
+            }
+        }
+        $this->data = $data;
     }
 
     public function executeMainMenuHome()
