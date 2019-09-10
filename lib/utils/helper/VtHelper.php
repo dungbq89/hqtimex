@@ -1130,6 +1130,10 @@ class VtHelper
         return sfConfig::get('app_url_media_file') . '/' . $prefix . $link;
     }
 
+    public static function formatPrice($price, $reg = "0")
+    {
+        return number_format(htmlspecialchars($price), 0, ",", $reg);
+    }
 }
 
 /**

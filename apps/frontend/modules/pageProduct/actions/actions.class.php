@@ -16,6 +16,19 @@ class pageProductActions extends sfActions
 
     public function executeDetail(sfWebRequest $request)
     {
+        $i18n = sfContext::getInstance()->getI18N();
+        $slug = $request->getParameter('slug');
+        $product = false;
+        if ($slug) {
+            // lay chi tiet san pham
+            $product = VtpProductsTable::getProductbySlug($slug, 0);
+            if ($product) {
+                $this->product = $product;
+            }
+        }
+        if (!$product) {
+            $this->forward404($i18n->__('Page not found!'));
+        }
     }
 
     //render meta tag
