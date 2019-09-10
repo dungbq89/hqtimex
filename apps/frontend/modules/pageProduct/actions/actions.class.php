@@ -46,4 +46,9 @@ class pageProductActions extends sfActions
         $this->getResponse()->addMeta('dc.keywords', $seo_homepage['dc_keywords']);
         $this->getResponse()->addMeta('news_keywords', $seo_homepage['news_keywords']);
     }
+
+    public function executeInquryNow(sfWebRequest $request)
+    {
+
+    }
 }
