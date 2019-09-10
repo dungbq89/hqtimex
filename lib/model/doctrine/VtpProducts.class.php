@@ -23,4 +23,12 @@ class VtpProducts extends BaseVtpProducts
         if (!empty($listImage)) return $listImage;
         return false;
     }
+
+    public function getObjBrand()
+    {
+        if ($this->brand) {
+            return HqBrandTable::getBrandById($this->brand);
+        }
+        return false;
+    }
 }

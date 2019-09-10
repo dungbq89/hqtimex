@@ -80,11 +80,13 @@
                                             <p style="font-weight: bold"><?php echo __('Dried Ginger') ?> </p>
                                         </div>
                                     </div>
-                                    <?php if ($product->brand) { ?>
+                                    <?php if ($product->brand) {
+                                        $objBrand = $product->getObjBrand();
+                                        ?>
                                         <div class="row">
                                             <div class="col-3"><?php echo __('Brand') ?></div>
                                             <div
-                                                class="col-9"><?php echo ($product->brand) ? $product->brand : '' ?></div>
+                                                class="col-9"><?php echo ($objBrand) ? $objBrand->name : '' ?></div>
                                         </div>
                                     <?php } ?>
                                     <?php if ($product->origin) { ?>
@@ -220,5 +222,28 @@
 
     .variants_selects .col-10 input, .variants_selects .col-10 textarea {
         width: 100%;
+    }
+
+    form .modal_add_to_cart button {
+        background: none;
+        border: 1px solid #333;
+        margin-left: 10px;
+        font-size: 12px;
+        font-weight: 700;
+        height: 45px;
+        width: 230px;
+        line-height: 18px;
+        padding: 10px 15px;
+        text-transform: uppercase;
+        background: #333;
+        color: #ffffff;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+    form .modal_add_to_cart  button:hover {
+        background: #ffd54c;
+        color: #ffffff;
+        border-color: #ffd54c;
     }
 </style>
