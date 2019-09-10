@@ -88,6 +88,7 @@
                                     </ul>
                                 </li>
 
+                                <li><a target="_blank" href="https://vn1188428656ldxm.trustpass.alibaba.com/?spm=a2700.7756200.0.0.52731afaQONw5B"><?php echo __('Alibaba Store'); ?></a></li>
                                 <li><a href="#"><?php echo __('Services'); ?></a></li>
                                 <li><a href="#"><?php echo __('News'); ?></a></li>
                                 <li><a href="<?php echo url_for('about_us'); ?>"><?php echo __('About Us'); ?></a></li>
@@ -163,6 +164,7 @@
                                 </ul>
                             </li>
 
+                            <li><a target="_blank" href="https://vn1188428656ldxm.trustpass.alibaba.com/?spm=a2700.7756200.0.0.52731afaQONw5B"><?php echo __('Alibaba Store'); ?></a></li>
                             <li><a href="#"><?php echo __('Services'); ?></a></li>
                             <li><a href="#"><?php echo __('News'); ?></a></li>
                             <li><a href="<?php echo url_for('about_us'); ?>"><?php echo __('About Us'); ?></a></li>

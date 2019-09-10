@@ -11,8 +11,8 @@ hq_product:
   url: /product/:page
   param: {module: pageProduct, action: index, page: 1}
 hq_product_detail:
-  url: /product-detail/:id
-  param: {module: pageProduct, action: detail}
+  url: /product-detail/:slug
+  param: {module: pageProduct, action: detail, slug: ""}
 
 
 # default rules

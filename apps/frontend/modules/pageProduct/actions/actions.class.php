@@ -16,6 +16,19 @@ class pageProductActions extends sfActions
 
     public function executeDetail(sfWebRequest $request)
     {
+        $i18n = sfContext::getInstance()->getI18N();
+        $slug = $request->getParameter('slug');
+        $product = false;
+        if ($slug) {
+            // lay chi tiet san pham
+            $product = VtpProductsTable::getProductbySlug($slug, 0);
+            if ($product) {
+                $this->product = $product;
+            }
+        }
+        if (!$product) {
+            $this->forward404($i18n->__('Page not found!'));
+        }
     }
 
     //render meta tag
@@ -32,5 +45,10 @@ class pageProductActions extends sfActions
         $this->getResponse()->addMeta('dc.title', $seo_homepage['dc_title']);
         $this->getResponse()->addMeta('dc.keywords', $seo_homepage['dc_keywords']);
         $this->getResponse()->addMeta('news_keywords', $seo_homepage['news_keywords']);
+    }
+
+    public function executeInquryNow(sfWebRequest $request)
+    {
+
     }
 }

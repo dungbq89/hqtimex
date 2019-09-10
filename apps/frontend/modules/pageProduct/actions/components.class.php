@@ -8,7 +8,10 @@
  */
 class pageProductComponents extends sfComponents
 {
-    public function executeIndex(sfWebRequest $request)
+    public function executeProductRelated(sfWebRequest $request)
     {
+        // lay danh sach san pham lien quan
+        $products = VtpProductsTable::getProductByCatIdV2($this->getVar('catId'), 10);
+        $this->products = $products;
     }
 }

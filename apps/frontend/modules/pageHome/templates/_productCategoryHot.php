@@ -17,11 +17,11 @@ if (isset($data) && count($data)) {
                                     ?>
                                     <div class="single_product">
                                         <div class="product_name" style="font-weight: bold">
-                                            <h3><a href="#"><?php echo $product['product_name'] ?></a>
+                                            <h3><a href="<?php echo url_for1('@hq_product_detail?slug='.$product['slug']) ?>"><?php echo $product['product_name'] ?></a>
                                             </h3>
                                         </div>
                                         <div class="product_thumb">
-                                            <a class="primary_img" href="#"><img
+                                            <a class="primary_img" href="<?php echo url_for1('@hq_product_detail?slug='.$product['slug']) ?>"><img
                                                         src="<?php echo VtHelper::getThumbUrl($path, 178, 178, 'default') ?>" alt=""></a>
                                         </div>
                                         <div class="product_content">
