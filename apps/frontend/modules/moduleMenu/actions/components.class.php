@@ -10,7 +10,16 @@ class moduleMenuComponents extends sfComponents
 {
     public function executeMainMenu()
     {
-
+        $category = VtpProductsCategoryTable::getCategoryByParentID(null, 10);
+        $data = array();
+        if($category && count($category)){
+            foreach ($category as $cate){
+                $catChild = VtpProductsCategoryTable::getCategoryByParentID($cate['id'], 10);
+                $cate['childs'] = $catChild;
+                $data[] = $cate;
+            }
+        }
+        $this->data = $data;
     }
 
     public function executeMainMenuHome()
@@ -61,6 +70,11 @@ class moduleMenuComponents extends sfComponents
     public function executeHeaderMobile(){
         //lay ra danh sach album
         $this->listAlbum = AdAlbumTable::getAllAlbum()->fetchArray();
+    }
+
+    public function executeBreadscrumbs($request)
+    {
+        $this->arrBread = $this->getVar('arrBread');
     }
 
 }

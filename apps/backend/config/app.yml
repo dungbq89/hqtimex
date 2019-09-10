@@ -55,25 +55,9 @@ all:
               credentials: [[admin]]
               route: vtp_category
               icon: squares36.png
-            Quản lý căn hộ:
-              credentials: [[admin]]
-              route: vtp_products_category
-              icon: business133.png
-            Quản lý menu:
-              credentials: [[admin]]
-              route: vtp_menu
-              icon: squares36.png
-            Quản lý phòng:
-              credentials: [[admin,subAdmin, ctv]]
-              route: vtp_products
-              icon: movie36.png
             Quản lý nội dung:
               credentials: [[admin,subAdmin]]
               route: ad_html
-              icon: text.png
-            Quản lý thông tin phản hồi:
-              credentials: [[admin]]
-              route: ad_comment
               icon: text.png
             Vị trí quảng cáo:
               credentials: [[admin,subAdmin]]
@@ -87,30 +71,10 @@ all:
               credentials: [[admin]]
               route: ad_link
               icon: link71.png
-            Quản lý Album - Photo:
-              credentials: [[admin,subAdmin]]
-              route: ad_album
-              icon: computer.png
-            Quản lý thuộc tính:
-              credentials: [[admin]]
-              route: parameter
-              icon: link71.png
-            Quản lý danh mục thuộc tính:
-              credentials: [[admin]]
-              route: parameter_category
-              icon: link71.png
-            Quản lý danh sách ảnh căn hộ:
-              credentials: [[admin]]
-              route: ad_chain_image
-              icon: link71.png
             Quản lý đơn hàng:
               credentials: [[admin]]
               route: booking
               icon: text.png
-            Quản lý feedback:
-              credentials: [[admin]]
-              route: ad_feed_back
-              icon: link71.png
         Quản trị hệ thống:
           credentials: [admin]
           dropdown:
@@ -127,9 +91,6 @@ all:
               icon: users6.png
             Tiếng Anh:
               route: pageEN
-              icon: users6.png
-            Tiếng Hàn:
-              route: pageKO
               icon: users6.png
 
   sf_captchagd:

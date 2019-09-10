@@ -59,9 +59,10 @@ class VtpProductsCategoryTable extends Doctrine_Table
     {
         $sql = VtpProductsCategoryTable::getInstance()->createQuery()
             ->select('id, name, image_path, link, priority, description, slug')
-            ->andWhere('is_active=1')
-            ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
-            ->orderBy('priority asc');
+            ->where('is_active=1')
+            ->andWhere('is_home=1')
+//            ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
+            ->orderBy('priority DESC');
         return $sql->fetchArray();
     }
 
@@ -82,11 +83,11 @@ class VtpProductsCategoryTable extends Doctrine_Table
         $query = VtpProductsCategoryTable::getInstance()->createQuery()
             ->where(($parentId != '') ? 'parent_id=?' : '(parent_id=? or parent_id is null)', $parentId)
             ->andWhere('is_active=1')
-            ->orderby('priority asc');
+            ->orderby('priority desc');
         if ($limit != null) {
             $query->limit($limit);
         }
-        return $query->execute();
+        return $query->fetchArray();
     }
 
     public static function getCategoryById($id)

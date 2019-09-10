@@ -12,25 +12,37 @@ class pageHomeComponents extends sfComponents
     {
         $this->slide = AdAdvertiseTable::getAdvertiseV2('homepage');
     }
-    public function executeBooking(sfWebRequest $request)
+
+    public function executeDepartment($request)
     {
-        $this->form = new FormBooking();
-    }
-    public function executeRoomListHome(sfWebRequest $request)
-    {
-        $productHome = VtpProductsTable::getHomeProducts(10);
-        if($productHome){
-            $this->products = $productHome;
-        }else{
-            return sfView::NONE;
+        $department = HqBrandTable::getBrandByParentID(null, 10);
+        $data = array();
+        if($department && count($department)){
+            foreach ($department as $depart){
+                $departChild = HqBrandTable::getBrandByParentID($depart['id'], 10);
+                $depart['childs'] = $departChild;
+                $data[] = $depart;
+            }
         }
+        $this->data = $data;
     }
 
-    public function executeRoomHot(sfWebRequest $request)
+    public function executeSlideShow($request)
     {
-        $productHot = VtpProductsTable::getHotProducts(4);
-        if($productHot){
-            $this->products = $productHot;
+
+    }
+
+    public function executeProductCategoryHot($request)
+    {
+        $data = array();
+        $categoriesHot = VtpProductsCategoryTable::getListCategoryHome();
+        if($categoriesHot){
+            foreach ($categoriesHot as $category){
+                $productsHot = VtpProductsTable::getProductHotByCatId($category['id'], 10);
+                $category['products'] = $productsHot;
+                $data[] = $category;
+            }
+            $this->data = $data;
         }else{
             return sfView::NONE;
         }
