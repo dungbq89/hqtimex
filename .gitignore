@@ -2,3 +2,5 @@
 /.idea
 /config
 /log
+/web/cache
+/web/uploads
