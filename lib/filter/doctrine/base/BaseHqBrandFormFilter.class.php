@@ -20,6 +20,7 @@ abstract class BaseHqBrandFormFilter extends BaseFormFilterDoctrine
       'priority'    => new sfWidgetFormFilterInput(),
       'is_active'   => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
       'lang'        => new sfWidgetFormFilterInput(),
+      'slug'        => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
@@ -30,6 +31,7 @@ abstract class BaseHqBrandFormFilter extends BaseFormFilterDoctrine
       'priority'    => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'is_active'   => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
       'lang'        => new sfValidatorPass(array('required' => false)),
+      'slug'        => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('hq_brand_filters[%s]');
@@ -57,6 +59,7 @@ abstract class BaseHqBrandFormFilter extends BaseFormFilterDoctrine
       'priority'    => 'Number',
       'is_active'   => 'Boolean',
       'lang'        => 'Text',
+      'slug'        => 'Text',
     );
   }
 }

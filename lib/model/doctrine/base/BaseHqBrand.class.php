@@ -14,6 +14,7 @@ Doctrine_Manager::getInstance()->bindComponent('HqBrand', 'doctrine');
  * @property integer $priority
  * @property boolean $is_active
  * @property string $lang
+ * @property string $slug
  * 
  * @method string  getName()        Returns the current record's "name" value
  * @method string  getImage()       Returns the current record's "image" value
@@ -22,6 +23,7 @@ Doctrine_Manager::getInstance()->bindComponent('HqBrand', 'doctrine');
  * @method integer getPriority()    Returns the current record's "priority" value
  * @method boolean getIsActive()    Returns the current record's "is_active" value
  * @method string  getLang()        Returns the current record's "lang" value
+ * @method string  getSlug()        Returns the current record's "slug" value
  * @method HqBrand setName()        Sets the current record's "name" value
  * @method HqBrand setImage()       Sets the current record's "image" value
  * @method HqBrand setDescription() Sets the current record's "description" value
@@ -29,6 +31,7 @@ Doctrine_Manager::getInstance()->bindComponent('HqBrand', 'doctrine');
  * @method HqBrand setPriority()    Sets the current record's "priority" value
  * @method HqBrand setIsActive()    Sets the current record's "is_active" value
  * @method HqBrand setLang()        Sets the current record's "lang" value
+ * @method HqBrand setSlug()        Sets the current record's "slug" value
  * 
  * @package    symfony
  * @subpackage model
@@ -77,11 +80,22 @@ abstract class BaseHqBrand extends sfDoctrineRecord
              'comment' => 'Đa ngôn ngữ',
              'length' => 10,
              ));
+        $this->hasColumn('slug', 'string', 255, array(
+             'type' => 'string',
+             'notnull' => true,
+             'length' => 255,
+             ));
     }
 
     public function setUp()
     {
         parent::setUp();
-        
+        $sluggable0 = new Doctrine_Template_Sluggable(array(
+             'fields' => 
+             array(
+              0 => 'name',
+             ),
+             ));
+        $this->actAs($sluggable0);
     }
 }

@@ -8,8 +8,11 @@ about_us:
   url: /about-us
   param: {module: pageIntroduction, action: index}
 hq_product:
-  url: /product/:page
-  param: {module: pageProduct, action: index, page: 1}
+  url: /product/:slug/:page
+  param: {module: pageProduct, action: index, page: 1, slug: ""}
+hq_brand:
+  url: /brand/:slug/:page
+  param: {module: pageProduct, action: brand, page: 1, slug: ""}
 hq_product_detail:
   url: /product-detail/:slug
   param: {module: pageProduct, action: detail, slug: ""}

@@ -1,10 +1,7 @@
 ﻿<?php
 $listImage = $product->getListImage();
 $imageFirst = [];
-if (!empty($listImage)) {
-    $imageFirst = $listImage[0];
-    $pathImg = '/uploads/' . sfConfig::get('app_product_images') . $imageFirst['file_path'];
-}
+$pathImg = '/uploads/' . sfConfig::get('app_product_images') . $product->image_path;
 ?>
     <!--breadcrumbs area start-->
     <div class="breadcrumbs_area">
@@ -45,10 +42,18 @@ if (!empty($listImage)) {
 
                         <div class="single-zoom-thumb">
                             <ul class="s-tab-zoom owl-carousel single-product-active" id="gallery_01">
+                                <li>
+                                    <a href="#" class="elevatezoom-gallery active" data-update=""
+                                       data-image="<?php echo $pathImg ?>"
+                                       data-zoom-image="<?php echo $pathImg ?>">
+                                        <img src="<?php echo VtHelper::getThumbUrl($pathImg, 95, 95) ?>"
+                                             alt="zo-th-1"/>
+                                    </a>
 
+                                </li>
                                 <?php
                                 if (!empty($listImage)) {
-                                    for ($i = 1; $i < count($listImage); $i++) {
+                                    for ($i = 0; $i < count($listImage); $i++) {
                                         $image = $listImage[$i];
                                         $pathImg = '/uploads/' . sfConfig::get('app_product_images') . $image['file_path'];
                                         ?>
@@ -75,12 +80,12 @@ if (!empty($listImage)) {
 
                             <h1><?php echo htmlentities($product->product_name) ?></h1>
 
-<!--                            <div class="product_nav">-->
-<!--                                <ul>-->
-<!--                                    <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li>-->
-<!--                                    <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li>-->
-<!--                                </ul>-->
-<!--                            </div>-->
+                            <!--                            <div class="product_nav">-->
+                            <!--                                <ul>-->
+                            <!--                                    <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li>-->
+                            <!--                                    <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li>-->
+                            <!--                                </ul>-->
+                            <!--                            </div>-->
                             <div class=" product_ratting">
                                 <ul>
                                     <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -94,10 +99,11 @@ if (!empty($listImage)) {
                             </div>
                             <div class="price_box">
                             <span
-                                class="current_price"><?php echo $product->price ? '$' . VtHelper::formatPrice($product->price) : '' ?></span>
-                            <span
-                                class="old_price"><?php echo $product->price_promotion ? '$' . VtHelper::formatPrice($product->price_promotion) : '' ?></span>
-
+                                class="current_price"><?php echo $product->price ? '$' . VtHelper::formatPrice($product->price) : __('Contact supplier') ?></span>
+                                <?php if ($product->price_promotion) { ?>
+                                    <span
+                                        class="old_price"><?php echo $product->price_promotion ? '$' . VtHelper::formatPrice($product->price_promotion) : '' ?></span>
+                                <?php } ?>
                             </div>
                             <div class="product_desc">
                                 <p>

@@ -1132,7 +1132,11 @@ class VtHelper
 
     public static function formatPrice($price, $reg = "0")
     {
-        return number_format(htmlspecialchars($price), 0, ",", $reg);
+        if ($price) {
+            return number_format(htmlspecialchars($price), 0, ",", $reg);
+        }
+        return '';
+
     }
 }
 

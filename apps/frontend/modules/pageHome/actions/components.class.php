@@ -27,6 +27,20 @@ class pageHomeComponents extends sfComponents
         $this->data = $data;
     }
 
+    public function executeCategory($request)
+    {
+        $cats = VtpProductsCategoryTable::getCatByParentID(null, 10);
+        $data = array();
+        if ($cats && count($cats)) {
+            foreach ($cats as $cat) {
+                $catChild = VtpProductsCategoryTable::getCatByParentID($cat['id'], 10);
+                $cat['childs'] = $catChild;
+                $data[] = $cat;
+            }
+        }
+        $this->data = $data;
+    }
+
     public function executeSlideShow($request)
     {
 
