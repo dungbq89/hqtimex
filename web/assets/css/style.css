@@ -1511,7 +1511,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   background: #fff;
-  position: absolute;
+  /*position: absolute;*/
   width: 100%;
   top: 100%;
   z-index: 9;

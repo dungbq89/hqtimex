@@ -23,6 +23,7 @@ abstract class BaseHqBrandForm extends BaseFormDoctrine
       'priority'    => new sfWidgetFormInputText(),
       'is_active'   => new sfWidgetFormInputCheckbox(),
       'lang'        => new sfWidgetFormInputText(),
+      'slug'        => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
@@ -34,7 +35,12 @@ abstract class BaseHqBrandForm extends BaseFormDoctrine
       'priority'    => new sfValidatorInteger(array('required' => false)),
       'is_active'   => new sfValidatorBoolean(array('required' => false)),
       'lang'        => new sfValidatorString(array('max_length' => 10, 'required' => false)),
+      'slug'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
     ));
+
+    $this->validatorSchema->setPostValidator(
+      new sfValidatorDoctrineUnique(array('model' => 'HqBrand', 'column' => array('slug')))
+    );
 
     $this->widgetSchema->setNameFormat('hq_brand[%s]');
 

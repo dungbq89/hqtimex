@@ -9,7 +9,9 @@
                 if (isset($data) && count($data)) {
                     foreach ($data as $brand) {
                         ?>
-                        <li><a href="#"> <?php echo $brand['name']; ?></a></li>
+                        <li>
+                            <a href="<?php echo url_for1('@hq_brand?slug=' . $brand['slug']) ?>"> <?php echo $brand['name']; ?></a>
+                        </li>
                         <?php
                     }
                 }

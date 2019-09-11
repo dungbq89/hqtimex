@@ -65,7 +65,7 @@
                                     <div class="product_footer d-flex align-items-center">
                                         <div class="price_box">
                                             <span
-                                                class="regular_price"><?php echo (!empty($product['price']) && $product['price'] != '') ? sprintf('$%s', $product['price']) : '' ?></span>
+                                                class="regular_price"><?php echo (!empty($product['price']) && $product['price'] != '') ? sprintf('$%s', $product['price']) : __('Contact supplier') ?></span>
                                         </div>
                                         <div class="add_to_cart">
                                             <a href="cart.html" title="add to cart"><span

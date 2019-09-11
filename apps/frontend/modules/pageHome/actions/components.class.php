@@ -17,11 +17,25 @@ class pageHomeComponents extends sfComponents
     {
         $department = HqBrandTable::getBrandByParentID(null, 10);
         $data = array();
-        if($department && count($department)){
-            foreach ($department as $depart){
+        if ($department && count($department)) {
+            foreach ($department as $depart) {
                 $departChild = HqBrandTable::getBrandByParentID($depart['id'], 10);
                 $depart['childs'] = $departChild;
                 $data[] = $depart;
+            }
+        }
+        $this->data = $data;
+    }
+
+    public function executeCategory($request)
+    {
+        $cats = VtpProductsCategoryTable::getCatByParentID(null, 10);
+        $data = array();
+        if ($cats && count($cats)) {
+            foreach ($cats as $cat) {
+                $catChild = VtpProductsCategoryTable::getCatByParentID($cat['id'], 10);
+                $cat['childs'] = $catChild;
+                $data[] = $cat;
             }
         }
         $this->data = $data;
@@ -36,14 +50,14 @@ class pageHomeComponents extends sfComponents
     {
         $data = array();
         $categoriesHot = VtpProductsCategoryTable::getListCategoryHome();
-        if($categoriesHot){
-            foreach ($categoriesHot as $category){
+        if ($categoriesHot) {
+            foreach ($categoriesHot as $category) {
                 $productsHot = VtpProductsTable::getProductHotByCatId($category['id'], 10);
                 $category['products'] = $productsHot;
                 $data[] = $category;
             }
             $this->data = $data;
-        }else{
+        } else {
             return sfView::NONE;
         }
     }

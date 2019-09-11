@@ -25,6 +25,7 @@ class HqBrandFormAdmin extends BaseHqBrandForm
                 'template' => '<div>%file%<br />%input%</div>',
             )),
             'is_active' => new sfWidgetFormInputCheckbox(),
+            'slug' => new sfWidgetFormInputHidden(),
         ));
 
         $this->setValidators(array(
@@ -42,6 +43,7 @@ class HqBrandFormAdmin extends BaseHqBrandForm
                     'max_size' => $i18n->__('Tối đa 5MB')
                 )),
             'is_active' => new sfValidatorBoolean(array('required' => false)),
+            'slug' => new sfValidatorPass()
         ));
 
         $this->widgetSchema['priority'] = new sfWidgetFormInputText(array('default' => 0), array('size' => 5, 'maxlength' => 5));
@@ -73,7 +75,7 @@ class HqBrandFormAdmin extends BaseHqBrandForm
         $arrBrand = ['' => $i18n->__('-- Chọn nhà cung cấp cha --')];
         $brands = HqBrandTable::getAllBrand();
         foreach ($brands as $brand) {
-            if($id != $brand->id){
+            if ($id != $brand->id) {
                 $arrBrand[$brand->id] = $brand->name;
             }
         }
