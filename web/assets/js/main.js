@@ -41,8 +41,7 @@
         autoplay: true,
 		loop: true,
         nav: false,
-        autoplay: false,
-        autoplayTimeout: 8000,
+        autoplayTimeout: 5000,
         items: 1,
         dots:true,
     });
@@ -50,11 +49,11 @@
     /*---product column5 activation---*/
        $('.product_column5').on('changed.owl.carousel initialized.owl.carousel', function (event) {
         $(event.target).find('.owl-item').removeClass('last').eq(event.item.index + event.page.size - 1).addClass('last')}).owlCarousel({
-        autoplay: true,
+        // autoplay: true,
 		loop: true,
         nav: true,
         autoplay: false,
-        autoplayTimeout: 8000,
+        autoplayTimeout: 5000,
         items: 5,
         margin:20,
         dots:false,
@@ -84,11 +83,11 @@
     /*---product column4 activation---*/
        $('.product_column4').on('changed.owl.carousel initialized.owl.carousel', function (event) {
         $(event.target).find('.owl-item').removeClass('last').eq(event.item.index + event.page.size - 1).addClass('last')}).owlCarousel({
-        autoplay: true,
+        // autoplay: true,
 		loop: true,
         nav: true,
         autoplay: false,
-        autoplayTimeout: 8000,
+        autoplayTimeout: 5000,
         items: 4,
         margin:20,
         dots:false,
@@ -116,11 +115,11 @@
      /*---product column4 activation---*/
        $('.product_sidebar_column4').on('changed.owl.carousel initialized.owl.carousel', function (event) {
         $(event.target).find('.owl-item').removeClass('last').eq(event.item.index + event.page.size - 1).addClass('last')}).owlCarousel({
-        autoplay: true,
+        // autoplay: true,
 		loop: true,
         nav: true,
         autoplay: false,
-        autoplayTimeout: 8000,
+        autoplayTimeout: 5000,
         items: 4,
         margin:20,
         dots:false,
@@ -146,11 +145,11 @@
     /*---featured column3 activation---*/
     $('.featured_column3').on('changed.owl.carousel initialized.owl.carousel', function (event) {
         $(event.target).find('.owl-item').removeClass('last').eq(event.item.index + event.page.size - 1).addClass('last')}).owlCarousel({
-        autoplay: true,
+        // autoplay: true,
 		loop: true,
         nav: false,
         autoplay: false,
-        autoplayTimeout: 8000,
+        autoplayTimeout: 5000,
         items: 3,
         dots:false,
         responsiveClass:true,
@@ -171,11 +170,11 @@
 
     /*---product column3 activation---*/
     $('.product_column3').owlCarousel({
-        autoplay: true,
+        // autoplay: true,
 		loop: true,
         nav: true,
         autoplay: false,
-        autoplayTimeout: 8000,
+        autoplayTimeout: 5000,
         items: 3,
         margin:20,
         dots:false,
@@ -197,11 +196,11 @@
     
     /*---product column2 activation---*/
     $('.product_column2').owlCarousel({
-        autoplay: true,
+        // autoplay: true,
 		loop: true,
         nav: true,
         autoplay: false,
-        autoplayTimeout: 8000,
+        autoplayTimeout: 5000,
         items: 2,
         margin:20,
         dots:false,
@@ -225,11 +224,11 @@
     
     /*---product column4 activation---*/
     $('.blog_column4').owlCarousel({
-        autoplay: true,
+        // autoplay: true,
 		loop: true,
         nav: true,
         autoplay: false,
-        autoplayTimeout: 8000,
+        autoplayTimeout: 5000,
         items: 4,
         margin:20,
         dots:false,
@@ -257,7 +256,7 @@
 		loop: true,
         nav: true,
         autoplay: false,
-        autoplayTimeout: 8000,
+        autoplayTimeout: 5000,
         items: 1,
         margin:20,
         navText: ['<i class="ion-ios-arrow-thin-left"></i>','<i class="ion-ios-arrow-thin-right"></i>'],
@@ -270,7 +269,7 @@
 		loop: true,
         nav: false,
         autoplay: false,
-        autoplayTimeout: 8000,
+        autoplayTimeout: 5000,
         items: 5,
         dots:false,
         responsiveClass:true,
@@ -332,7 +331,7 @@
 		loop: true,
         nav: true,
         autoplay: false,
-        autoplayTimeout: 8000,
+        autoplayTimeout: 5000,
         items: 4,
         margin:15,
         dots:false,
@@ -362,7 +361,7 @@
 		loop: true,
         nav: false,
         autoplay: false,
-        autoplayTimeout: 8000,
+        autoplayTimeout: 5000,
         items: 1,
         dots:true,
     })
@@ -373,7 +372,7 @@
 		loop: true,
         nav: true,
         autoplay: false,
-        autoplayTimeout: 8000,
+        autoplayTimeout: 5000,
         items: 4,
         dots:false,
         navText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],

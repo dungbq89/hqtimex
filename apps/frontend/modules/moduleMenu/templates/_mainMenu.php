@@ -73,7 +73,7 @@
                         <nav>
                             <ul>
 
-                                <li><a href="#"><?php echo __('Home'); ?></a></li>
+                                <li><a href="<?php echo url_for('homepage'); ?>"><?php echo __('Home'); ?></a></li>
                                 <li><a href="#"><?php echo __('Products'); ?><i class="fa fa-angle-down"></i></a>
                                     <ul class="sub_menu pages">
                                         <?php
@@ -155,12 +155,18 @@
                     <div id="menu" class="text-left ">
                         <ul>
 
-                            <li><a href="#"><?php echo __('Home'); ?></a></li>
+                            <li><a href="<?php echo url_for('homepage'); ?>"><?php echo __('Home'); ?></a></li>
                             <li><a href="#"><?php echo __('Products'); ?></a>
                                 <ul>
-                                    <li><a href="blog-details.html">blog details</a></li>
-                                    <li><a href="blog-fullwidth.html">blog fullwidth</a></li>
-                                    <li><a href="blog-sidebar.html">blog sidebar</a></li>
+                                    <?php
+                                    if (isset($data) && count($data)) {
+                                        foreach ($data as $cate) {
+                                            ?>
+                                            <li><a href="#"> <?php echo $cate['name']; ?></a></li>
+                                            <?php
+                                        }
+                                    }
+                                    ?>
                                 </ul>
                             </li>
 

@@ -92,7 +92,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6">
                     <div class="copyright_area">
-                        <p>Copyright &copy; 2019 <a href="#">Autima</a>  All Right Reserved.</p>
+                        <p>Copyright &copy; 2019 <a href="#">HQTIMEX</a>  All Right Reserved.</p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
