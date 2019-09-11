@@ -222,4 +222,26 @@ class VtpProductsCategoryTable extends Doctrine_Table
         }
         return false;
     }
+
+    public static function getCategoryProductBySlugV3($slug)
+    {
+        $sql = VtpProductsCategoryTable::getInstance()->createQuery('a')
+            ->where('a.is_active=1')
+            ->andWhere('a.slug=?', $slug)
+            ->andWhere('a.lang=?', sfContext::getInstance()->getUser()->getCulture())
+            ->orderBy('a.priority asc');
+        return $sql->fetchOne();
+    }
+
+    public static function getCatByParentID($parentId, $limit = null)
+    {
+        $query = VtpProductsCategoryTable::getInstance()->createQuery()
+            ->where(($parentId != '') ? 'parent_id=?' : '(parent_id=? or parent_id is null)', $parentId)
+            ->andWhere('is_active=1')
+            ->orderby('priority desc');
+        if ($limit != null) {
+            $query->limit($limit);
+        }
+        return $query->fetchArray();
+    }
 }

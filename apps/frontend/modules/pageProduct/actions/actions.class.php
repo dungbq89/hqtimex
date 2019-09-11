@@ -12,6 +12,55 @@ class pageProductActions extends sfActions
 {
     public function executeIndex(sfWebRequest $request)
     {
+        $i18n = sfContext::getInstance()->getI18N();
+        // lay danh sach san pham theo cat
+        $slug = $request->getParameter('slug');
+        $page = $request->getParameter('page', 1);
+        $category = false;
+        $pager = false;
+        $limit = 4;
+        if ($slug && $page) {
+            $category = VtpProductsCategoryTable::getCategoryProductBySlugV3($slug);
+            if ($category) {
+                $pager = new sfDoctrinePager('VtpProducts', $limit);
+                $pager->setQuery(VtpProductsTable::getAllProductByCategory($category->id));
+                $pager->setPage($page);
+                $pager->init();
+            }
+        }
+        if ($category) {
+            $this->pager = $pager;
+            $this->category = $category;
+            $this->page = $page;
+        } else {
+            $this->forward404($i18n->__('Page not found!'));
+        }
+    }
+    public function executeBrand(sfWebRequest $request)
+    {
+        $i18n = sfContext::getInstance()->getI18N();
+        // lay danh sach san pham theo cat
+        $slug = $request->getParameter('slug');
+        $page = $request->getParameter('page', 1);
+        $category = false;
+        $pager = false;
+        $limit = 4;
+        if ($slug && $page) {
+            $category = HqBrandTable::getBrandBySlug($slug);
+            if ($category) {
+                $pager = new sfDoctrinePager('VtpProducts', $limit);
+                $pager->setQuery(VtpProductsTable::getAllProductByBrand($category->id));
+                $pager->setPage($page);
+                $pager->init();
+            }
+        }
+        if ($category) {
+            $this->pager = $pager;
+            $this->category = $category;
+            $this->page = $page;
+        } else {
+            $this->forward404($i18n->__('Page not found!'));
+        }
     }
 
     public function executeDetail(sfWebRequest $request)

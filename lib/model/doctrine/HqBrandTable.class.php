@@ -29,6 +29,13 @@ class HqBrandTable extends Doctrine_Table
             ->fetchOne();
     }
 
+    public static function getBrandBySlug($slug)
+    {
+        return HqBrandTable::getInstance()->createQuery()
+            ->andWhere('slug=?', $slug)
+            ->fetchOne();
+    }
+
     public static function getBrandByParentID($parentId, $limit = null)
     {
         $query = HqBrandTable::getInstance()->createQuery()

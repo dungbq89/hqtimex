@@ -140,8 +140,8 @@ class VtpProductsTable extends Doctrine_Table
         return VtpProductsTable::getInstance()->createQuery()
             ->where('slug=?', $slug)
             ->andWhere('is_active=?', VtCommonEnum::NUMBER_ONE)
-            ->andWhere('portal_id=?', $portalId)
-            ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
+//            ->andWhere('portal_id=?', $portalId)
+//            ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
             ->fetchOne();
     }
 
@@ -245,5 +245,14 @@ class VtpProductsTable extends Doctrine_Table
             return $query;
         }
         return false;
+    }
+
+    public static function getAllProductByBrand($brand)
+    {
+        $query = VtpProductsTable::getInstance()->createQuery()
+            ->where('brand=?', $brand)
+            ->andWhere('is_active=?', VtCommonEnum::NUMBER_ONE)
+            ->orderBy('updated_at DESC');
+        return $query;
     }
 }
