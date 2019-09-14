@@ -8,7 +8,7 @@ include_component('moduleMenu', 'breadscrumbs', array('arrBread' => array(__('Co
         <div class="row">
             <div class="col-12">
                 <div class="map-area">
-                    <div class="mapouter"><div class="gmap_canvas"><iframe width="1080" height="360" id="gmap_canvas" src="https://maps.google.com/maps?q=Keangnam&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/20-off-discount-for-elegant-themes-divi-sale-coupon-code-2019/">best value copy coupon code</a></div><style>.mapouter{position:relative;text-align:right;height:360px;width:1080px;}.gmap_canvas {overflow:hidden;background:none!important;height:360px;width:1080px;}</style></div>
+                    <div class="mapouter"><div class="gmap_canvas"><iframe width="1080" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=82%20ch%C3%B9a%20l%C3%A1ng&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>Google Maps Generator by <a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div><style>.mapouter{position:relative;text-align:right;height:300px;width:1080px;}.gmap_canvas {overflow:hidden;background:none!important;height:300px;width:1080px;}</style></div>
                 </div>
             </div>
         </div>
@@ -22,11 +22,12 @@ include_component('moduleMenu', 'breadscrumbs', array('arrBread' => array(__('Co
             <div class="col-lg-6 col-md-12">
                 <div class="contact_message content">
                     <h3>contact us</h3>
-                    <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram anteposuerit litterarum formas human. qui sequitur mutationem consuetudium lectorum. Mirum est notare quam</p>
+                    <p>HQT INTERNATIONAL IMPORT EXPORT JOINT STOCK COMPANY</p>
                     <ul>
-                        <li><i class="fa fa-fax"></i>  Address : No 40 Baria Sreet 133/2 NewYork City</li>
-                        <li><i class="fa fa-phone"></i> <a href="#">Infor@roadthemes.com</a></li>
-                        <li><i class="fa fa-envelope-o"></i> 0(1234) 567 890</li>
+                        <li><i class="fa fa-fax"></i>  Address : 82 Chua Lang street, Dong Da district, HANOI, VIETNAM</li>
+<!--                        <li><i class="fa fa-phone"></i> <a href="#">Infor@roadthemes.com</a></li>-->
+                        <li><i class="fa fa-phone"></i> 84243 5527676</li>
+                        <li><i class="fa fa-phone"></i> +84 906246584 (WHATSAPP/VIBER/ZALO)</li>
                     </ul>
                 </div>
             </div>

@@ -34,13 +34,13 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="widgets_container contact_us">
                         <div class="footer_logo">
-                            <a href="#"><img src="./assets/img/logo/logo.png" alt=""></a>
+                            <a href="#"><img src="../images/logo.png" alt="logo" style="height: 60px;"></a>
                         </div>
                         <div class="footer_contact">
-                            <p>We are a team of designers and developers that
-                                create high quality Magento, Prestashop, Opencart...</p>
-                            <p><span>Address</span> 4710-4890 Breckinridge St, UK Burlington, VT 05401</p>
-                            <p><span>Need Help?</span>Call: 1-800-345-6789</p>
+                            <p>HQT INTERNATIONAL IMPORT EXPORT JOINT STOCK COMPANY</p>
+                            <p><span>Address: </span> 82 Chua Lang street, Dong Da district, HANOI, VIETNAM</p>
+                            <p><span>HOTLINE: </span>+84 906246584 (WHATSAPP/VIBER/ZALO)</p>
+                            <p><span>Need Help?</span>Call: 84243 5527676</p>
                         </div>
                     </div>
                 </div>

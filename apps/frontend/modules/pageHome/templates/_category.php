@@ -1,7 +1,7 @@
 <div class="col-lg-3 col-md-12">
     <div class="categories_menu">
         <div class="categories_title">
-            <h2 class="categori_toggle"><?php echo __('CATEGORIES'); ?></h2>
+            <h2 class="categori_toggle"><?php echo __('PRODUCTS'); ?></h2>
         </div>
         <div class="categories_menu_toggle">
             <ul>

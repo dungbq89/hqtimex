@@ -31,4 +31,16 @@ class pageIntroductionActions extends sfActions
 
     }
 
+    public function executePolicy(sfWebRequest $request)
+    {
+        $lang = sfContext::getInstance()->getUser()->getCulture();
+        $html = AdHtmlTable::getHtmlById(63);
+        if($html){
+            $this->html = $html;
+        }
+        else{
+            return $this->redirect404();
+        }
+    }
+
 }

@@ -44,7 +44,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-6">
                     <div class="logo">
-                        <a href="<?php echo url_for('homepage'); ?>"><img src="../images/logo.png" alt=""></a>
+                        <a href="<?php echo url_for('homepage'); ?>"><img src="../images/logo.png" alt="" style="height: 60px;"></a>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-6">
@@ -80,7 +80,7 @@
                                         if (isset($data) && count($data)) {
                                             foreach ($data as $cate) {
                                                 ?>
-                                                <li><a href="#"> <?php echo $cate['name']; ?></a></li>
+                                                <li><a href="<?php echo url_for('hq_product', array('slug' => $cate['slug'])); ?>"> <?php echo $cate['name']; ?></a></li>
                                                 <?php
                                             }
                                         }
@@ -90,6 +90,7 @@
 
                                 <li><a target="_blank" href="https://vn1188428656ldxm.trustpass.alibaba.com/?spm=a2700.7756200.0.0.52731afaQONw5B"><?php echo __('Alibaba Store'); ?></a></li>
                                 <li><a href="#"><?php echo __('Services'); ?></a></li>
+                                <li><a href="<?php echo url_for('policy'); ?>"><?php echo __('Policy'); ?></a></li>
                                 <li><a href="#"><?php echo __('News'); ?></a></li>
                                 <li><a href="<?php echo url_for('about_us'); ?>"><?php echo __('About Us'); ?></a></li>
                                 <li><a href="<?php echo url_for('contact_us'); ?>"><?php echo __('Contact Us'); ?></a></li>
@@ -162,7 +163,7 @@
                                     if (isset($data) && count($data)) {
                                         foreach ($data as $cate) {
                                             ?>
-                                            <li><a href="#"> <?php echo $cate['name']; ?></a></li>
+                                            <li><a href="<?php echo url_for('hq_product', array('slug' => $cate['slug'])); ?>"> <?php echo $cate['name']; ?></a></li>
                                             <?php
                                         }
                                     }
@@ -172,6 +173,7 @@
 
                             <li><a target="_blank" href="https://vn1188428656ldxm.trustpass.alibaba.com/?spm=a2700.7756200.0.0.52731afaQONw5B"><?php echo __('Alibaba Store'); ?></a></li>
                             <li><a href="#"><?php echo __('Services'); ?></a></li>
+                            <li><a href="<?php echo url_for('policy'); ?>"><?php echo __('Policy'); ?></a></li>
                             <li><a href="#"><?php echo __('News'); ?></a></li>
                             <li><a href="<?php echo url_for('about_us'); ?>"><?php echo __('About Us'); ?></a></li>
                             <li><a href="<?php echo url_for('contact_us'); ?>"><?php echo __('Contact Us'); ?></a></li>

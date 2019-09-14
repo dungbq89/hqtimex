@@ -18,7 +18,7 @@ class pageProductActions extends sfActions
         $page = $request->getParameter('page', 1);
         $category = false;
         $pager = false;
-        $limit = 4;
+        $limit = 9;
         if ($slug && $page) {
             $category = VtpProductsCategoryTable::getCategoryProductBySlugV3($slug);
             if ($category) {
@@ -44,7 +44,7 @@ class pageProductActions extends sfActions
         $page = $request->getParameter('page', 1);
         $category = false;
         $pager = false;
-        $limit = 4;
+        $limit = 9;
         if ($slug && $page) {
             $category = HqBrandTable::getBrandBySlug($slug);
             if ($category) {

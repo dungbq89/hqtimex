@@ -43,7 +43,7 @@ class pageHomeComponents extends sfComponents
 
     public function executeSlideShow($request)
     {
-
+        $this->slide = AdAdvertiseTable::getAdvertiseV2('homepage');
     }
 
     public function executeProductCategoryHot($request)
