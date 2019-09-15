@@ -1,3 +1,12 @@
+ad_product:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdProduct
+    module:               adService
+    prefix_path:          /adService
+    column:               id
+    with_wildcard_routes: true
+
 hq_brand:
   class: sfDoctrineRouteCollection
   options:
