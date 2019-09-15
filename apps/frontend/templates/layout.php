@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>HQTIMEX | INDOCHINA CREATIVE INVESTMENT AND DEVELOPMENT JOINT STOCK COMPANY</title>
+    <title>HQT INTERNATIONAL IMPORT EXPORT JOINT STOCK COMPANY</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
@@ -18,6 +18,7 @@
 
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/update.css">
 
 </head>
 
@@ -28,7 +29,14 @@
 
 <?php include_component('moduleMenu', 'contentFooter'); ?>
 
+<div class="modal fade" id="popup_modal_box" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" id="popup_modal_box_content">
+        <?php include_component('pageProduct', 'inquiryNowForm') ?>
+    </div>
+</div>
 
+
+<div class="loading" style="display: none;">Loading</div>
 <!-- JS
 ============================================ -->
 

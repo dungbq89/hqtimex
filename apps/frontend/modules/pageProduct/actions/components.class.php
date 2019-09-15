@@ -14,4 +14,8 @@ class pageProductComponents extends sfComponents
         $products = VtpProductsTable::getProductByCatIdV2($this->getVar('catId'), 10);
         $this->products = $products;
     }
+
+    public function executeInquiryNowForm(sfWebRequest $request){
+        $this->form = new InquiryNowFront();
+    }
 }

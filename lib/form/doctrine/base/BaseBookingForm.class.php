@@ -28,6 +28,11 @@ abstract class BaseBookingForm extends BaseFormDoctrine
       'to_time'       => new sfWidgetFormDateTime(),
       'number_person' => new sfWidgetFormInputText(),
       'number_room'   => new sfWidgetFormInputText(),
+      'country'       => new sfWidgetFormInputText(),
+      'address'       => new sfWidgetFormInputText(),
+      'shipping_term' => new sfWidgetFormTextarea(),
+      'subject'       => new sfWidgetFormInputText(),
+      'requirement'   => new sfWidgetFormTextarea(),
       'created_at'    => new sfWidgetFormDateTime(),
       'updated_at'    => new sfWidgetFormDateTime(),
     ));
@@ -46,6 +51,11 @@ abstract class BaseBookingForm extends BaseFormDoctrine
       'to_time'       => new sfValidatorDateTime(array('required' => false)),
       'number_person' => new sfValidatorInteger(array('required' => false)),
       'number_room'   => new sfValidatorInteger(array('required' => false)),
+      'country'       => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'address'       => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'shipping_term' => new sfValidatorString(array('max_length' => 1000, 'required' => false)),
+      'subject'       => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'requirement'   => new sfValidatorString(array('max_length' => 1000, 'required' => false)),
       'created_at'    => new sfValidatorDateTime(),
       'updated_at'    => new sfValidatorDateTime(),
     ));

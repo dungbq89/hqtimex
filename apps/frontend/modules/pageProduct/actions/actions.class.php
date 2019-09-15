@@ -36,6 +36,7 @@ class pageProductActions extends sfActions
             $this->forward404($i18n->__('Page not found!'));
         }
     }
+
     public function executeBrand(sfWebRequest $request)
     {
         $i18n = sfContext::getInstance()->getI18N();
@@ -67,6 +68,7 @@ class pageProductActions extends sfActions
     {
         $i18n = sfContext::getInstance()->getI18N();
         $slug = $request->getParameter('slug');
+        $this->inquiryNowForm = new InquiryNowFront();
         $product = false;
         if ($slug) {
             // lay chi tiet san pham
@@ -78,6 +80,23 @@ class pageProductActions extends sfActions
         if (!$product) {
             $this->forward404($i18n->__('Page not found!'));
         }
+    }
+
+    public function executeSearch(sfWebRequest $request)
+    {
+        $this->queryName = $queryName = $request->getParameter('keyword');
+        if($queryName){
+            $this->keyword = $queryName;
+            $this->url_paging = 'page_search';
+            $this->page = $this->getRequestParameter('page', 1);
+            $pager = new sfDoctrinePager('VtpProducts', 21);
+            $pager->setQuery(VtpProductsTable::getSearchProduct($queryName));
+            $pager->setPage($this->page);
+            $pager->init();
+            $this->pager = $pager;
+            $this->listProduct = $pager->getResults();
+        }
+
     }
 
     //render meta tag
@@ -96,8 +115,59 @@ class pageProductActions extends sfActions
         $this->getResponse()->addMeta('news_keywords', $seo_homepage['news_keywords']);
     }
 
-    public function executeInquryNow(sfWebRequest $request)
+    public function executeInquiryNow(sfWebRequest $request)
     {
+        $this->getResponse()->setHttpHeader('Content-type', 'application/json');
+        $form = new InquiryNowFront();
+        $values = $request->getParameter($form->getName());
+        $form->bind(($values));
+        $valid = 1;
+        if ($form->isValid()) {
+            $obj = new Booking();
+            $obj->setFullName($values['full_name']);
+            $obj->setPhone($values['phone']);
+            $obj->setEmail($values['email']);
+            $obj->setCountry($values['country']);
+            $obj->setBody($values['body']);
+            $obj->setAddress($values['address']);
+            $obj->setShippingTerm($values['shipping_term']);
+            $obj->setSubject($values['subject']);
+            $obj->setRequirement($values['requirement']);
+            $obj->setLang(sfContext::getInstance()->getUser()->getCulture());
+            $obj->save();
+            $valid = 0;
+        }
+        foreach ($form->getValidatorSchema() as $e) {
+//            var_dump($e->getMessage());
+        }
+//        else {
+        $html = $this->getPartial('pageProduct/inquiryNowForm', array('form' => $form, 'valid' => $valid));
+//        }
+        $arrReturn = [
+            'errCode' => $valid,
+            'html' => $html,
+        ];
+        return $this->renderText(json_encode($arrReturn));
+    }
 
+    public function executePopupInquiryNow(sfWebRequest $request)
+    {
+        $this->getResponse()->setHttpHeader('Content-type', 'application/json');
+        $form = new InquiryNowFront();
+        $slug = $request->getParameter('slug');
+        $product = false;
+        $listImage = false;
+        if ($slug) {
+            $product = VtpProductsTable::getProductbySlug($slug, 0);
+            if ($product) {
+                $listImage = $product->getListImage();
+            }
+        }
+        $html = $this->getPartial('pageProduct/inquiryNow', array('form' => $form,
+            'product' => $product, 'listImage' => $listImage));
+        $arrReturn = [
+            'html' => $html,
+        ];
+        return $this->renderText(json_encode($arrReturn));
     }
 }
