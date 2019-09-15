@@ -4,4 +4,6 @@
 .price_box{
     text-align: center;
     color: #fd5018;
+    font-weight: bold;
+    font-size: 16px;
 }

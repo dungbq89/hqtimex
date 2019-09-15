@@ -80,6 +80,23 @@ class pageProductActions extends sfActions
         }
     }
 
+    public function executeSearch(sfWebRequest $request)
+    {
+        $this->queryName = $queryName = $request->getParameter('keyword');
+        if($queryName){
+            $this->keyword = $queryName;
+            $this->url_paging = 'page_search';
+            $this->page = $this->getRequestParameter('page', 1);
+            $pager = new sfDoctrinePager('VtpProducts', 21);
+            $pager->setQuery(VtpProductsTable::getSearchProduct($queryName));
+            $pager->setPage($this->page);
+            $pager->init();
+            $this->pager = $pager;
+            $this->listProduct = $pager->getResults();
+        }
+
+    }
+
     //render meta tag
     public function returnHtmlSeoPage($seo_homepage)
     {
