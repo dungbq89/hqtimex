@@ -50,9 +50,9 @@
                 <div class="col-lg-9 col-md-6">
                     <div class="middel_right">
                         <div class="search-container">
-                            <form action="#">
+                            <form action="<?php echo url_for1('@page_search') ?>" method="get">
                                 <div class="search_box">
-                                    <input placeholder="<?php echo __('Search entire store here'); ?> ..." type="text">
+                                    <input placeholder="<?php echo __('Search entire store here'); ?> ..." type="search" name="keyword" id="keyword">
                                     <button type="submit"><i class="ion-ios-search-strong"></i></button>
                                 </div>
                             </form>

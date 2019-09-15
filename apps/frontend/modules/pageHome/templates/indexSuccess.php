@@ -61,22 +61,16 @@
             <div class="col-12">
                 <div class="brand_container owl-carousel">
                     <div class="single_brand">
-                        <a href="#"><img src="./assets/img/brand/brand.png" alt=""></a>
+                        <a href="#"><img src="./assets/img/brand/brand1.png" alt="" style="height: 80px;"></a>
                     </div>
                     <div class="single_brand">
-                        <a href="#"><img src="./assets/img/brand/brand1.png" alt=""></a>
+                        <a href="#"><img src="./assets/img/brand/brand2.png" alt="" style="height: 80px;"></a>
                     </div>
                     <div class="single_brand">
-                        <a href="#"><img src="./assets/img/brand/brand2.png" alt=""></a>
+                        <a href="#"><img src="./assets/img/brand/brand3.png" alt="" style="height: 80px;"></a>
                     </div>
                     <div class="single_brand">
-                        <a href="#"><img src="./assets/img/brand/brand3.png" alt=""></a>
-                    </div>
-                    <div class="single_brand">
-                        <a href="#"><img src="./assets/img/brand/brand4.png" alt=""></a>
-                    </div>
-                    <div class="single_brand">
-                        <a href="#"><img src="./assets/img/brand/brand2.png" alt=""></a>
+                        <a href="#"><img src="./assets/img/brand/brand4.png" alt="" style="height: 80px;"></a>
                     </div>
                 </div>
             </div>

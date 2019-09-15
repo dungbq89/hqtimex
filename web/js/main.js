@@ -266,12 +266,11 @@
     /*---brand container activation---*/
      $('.brand_container').on('changed.owl.carousel initialized.owl.carousel', function (event) {
         $(event.target).find('.owl-item').removeClass('last').eq(event.item.index + event.page.size - 1).addClass('last')}).owlCarousel({
-        autoplay: true,
 		loop: true,
         nav: false,
         autoplay: false,
         autoplayTimeout: 8000,
-        items: 5,
+        items: 4,
         dots:false,
         responsiveClass:true,
 		responsive:{

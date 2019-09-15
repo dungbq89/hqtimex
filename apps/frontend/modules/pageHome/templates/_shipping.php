@@ -9,8 +9,8 @@
                             <img src="./assets/img/about/shipping1.png" alt="">
                         </div>
                         <div class="shipping_content">
-                            <h2>Free Shipping</h2>
-                            <p>Free shipping on all US order</p>
+                            <h2>Fast Delivery</h2>
+                            <p>Express (DHL, FeDex, Ups), Sea, Air</p>
                         </div>
                     </div>
                     <div class="single_shipping">
@@ -19,25 +19,25 @@
                         </div>
                         <div class="shipping_content">
                             <h2>Support 24/7</h2>
-                            <p>Contact us 24 hours a day</p>
+                            <p>You are served every time</p>
                         </div>
                     </div>
-                    <div class="single_shipping">
+                    <div class="single_shipping" style="padding-left: 20px;">
                         <div class="shipping_icone">
                             <img src="./assets/img/about/shipping3.png" alt="">
                         </div>
                         <div class="shipping_content">
-                            <h2>100% Money Back</h2>
-                            <p>You have 30 days to Return</p>
+                            <h2>Reputable company</h2>
+                            <p>You are assured with every transaction</p>
                         </div>
                     </div>
-                    <div class="single_shipping">
+                    <div class="single_shipping" style="padding-left: 20px;">
                         <div class="shipping_icone">
                             <img src="./assets/img/about/shipping4.png" alt="">
                         </div>
                         <div class="shipping_content">
-                            <h2>Payment Secure</h2>
-                            <p>We ensure secure payment</p>
+                            <h2>Payment Methods</h2>
+                            <p>We accept Western Union, Money Gram, T/T, L/C</p>
                         </div>
                     </div>
                 </div>
