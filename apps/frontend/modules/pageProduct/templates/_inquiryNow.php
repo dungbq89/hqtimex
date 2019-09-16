@@ -8,7 +8,7 @@
 ?>
 
 <!-- modal area start-->
-<div class="modal fade" id="modal_box" tabindex="-1" role="dialog" aria-hidden="true">
+<!--<div class="modal fade" id="modal_box" tabindex="-1" role="dialog" aria-hidden="true">-->
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -40,7 +40,6 @@
                                 </div>
                                 <div class="modal_tab_button">
                                     <ul class="nav product_navactive owl-carousel" role="tablist">
-
                                         <?php
                                         if (!empty($listImage)) {
                                             for ($i = 0; $i < count($listImage); $i++) {
@@ -65,137 +64,121 @@
                         </div>
                         <div class="col-lg-7 col-md-7 col-sm-12">
                             <div class="modal_right">
-                                <div class="modal_title mb-10">
-                                    <h2><?php echo htmlentities($product->product_name) ?></h2>
-                                </div>
-                                <div class="modal_price mb-10">
+                                <?php
+                                if (!empty($product)) {
+                                    ?>
+                                    <div class="modal_title mb-10">
+                                        <h2><?php echo htmlentities($product->product_name) ?></h2>
+                                    </div>
+                                    <div class="modal_price mb-10">
                                     <span
                                         class="new_price"><?php echo $product->price ? '$' . VtHelper::formatPrice($product->price) : '' ?></span>
                                     <span
                                         class="old_price"><?php echo $product->price_promotion ? '$' . VtHelper::formatPrice($product->price_promotion) : '' ?></span>
-                                </div>
-                                <div class="modal_description mb-15">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <p style="font-weight: bold"><?php echo __('Dried Ginger') ?> </p>
-                                        </div>
                                     </div>
-                                    <?php if ($product->brand) {
-                                        $objBrand = $product->getObjBrand();
-                                        ?>
+                                    <div class="modal_description mb-15">
                                         <div class="row">
-                                            <div class="col-3"><?php echo __('Brand') ?></div>
-                                            <div
-                                                class="col-9"><?php echo ($objBrand) ? $objBrand->name : '' ?></div>
+                                            <div class="col-12">
+                                                <p style="font-weight: bold"><?php echo __('Dried Ginger') ?> </p>
+                                            </div>
                                         </div>
-                                    <?php } ?>
-                                    <?php if ($product->origin) { ?>
-                                        <div class="row">
-                                            <div class="col-3"><?php echo __('Origin') ?></div>
-                                            <div
-                                                class="col-9"><?php echo ($product->origin) ? $product->origin : '' ?></div>
-                                        </div>
-                                    <?php } ?>
-                                    <?php if ($product->reference_price) { ?>
-                                        <div class="row">
-                                            <div class="col-3"><?php echo __('Reference price') ?></div>
-                                            <div
-                                                class="col-9"><?php echo ($product->reference_price) ? $product->reference_price : '' ?></div>
-                                        </div>
-                                    <?php } ?>
-                                    <?php if ($product->unit) { ?>
-                                        <div class="row">
-                                            <div class="col-3"><?php echo __('Unit count') ?></div>
-                                            <div
-                                                class="col-9"><?php echo ($product->unit) ? $product->unit : '' ?></div>
-                                        </div>
-                                    <?php } ?>
-                                    <?php if ($product->payment) { ?>
-                                        <div class="row">
-                                            <div class="col-3"><?php echo __('Payment') ?></div>
-                                            <div
-                                                class="col-9"><?php echo ($product->payment) ? $product->payment : '' ?></div>
-                                        </div>
-                                    <?php } ?>
-                                    <?php if ($product->delivery) { ?>
-                                        <div class="row">
-                                            <div class="col-3"><?php echo __('Delivery') ?></div>
-                                            <div
-                                                class="col-9"><?php echo ($product->delivery) ? $product->delivery : '' ?></div>
-                                        </div>
-                                    <?php } ?>
-                                    <?php if ($product->port) { ?>
-                                        <div class="row">
-                                            <div class="col-3"><?php echo __('Port') ?></div>
-                                            <div
-                                                class="col-9"><?php echo ($product->port) ? $product->port : '' ?></div>
-                                        </div>
-                                    <?php } ?>
-                                    <?php if ($product->supply_ability) { ?>
-                                        <div class="row">
-                                            <div class="col-3"><?php echo __('Supply ability') ?></div>
-                                            <div
-                                                class="col-9"><?php echo ($product->supply_ability) ? $product->supply_ability : '' ?></div>
-                                        </div>
-                                    <?php } ?>
-                                    <?php if ($product->packing) { ?>
-                                        <div class="row">
-                                            <div class="col-3"><?php echo __('Packing') ?></div>
-                                            <div
-                                                class="col-9"><?php echo ($product->packing) ? $product->packing : '' ?></div>
-                                        </div>
-                                    <?php } ?>
-                                    <?php if ($product->special_req) { ?>
-                                        <div class="row">
-                                            <div class="col-3"><?php echo __('Special requirements') ?></div>
-                                            <div
-                                                class="col-9"><?php echo ($product->special_req) ? $product->special_req : '' ?></div>
-                                        </div>
-                                    <?php } ?>
+                                        <?php if ($product->brand) {
+                                            $objBrand = $product->getObjBrand();
+                                            ?>
+                                            <div class="row">
+                                                <div class="col-3"><?php echo __('Brand') ?></div>
+                                                <div
+                                                    class="col-9"><?php echo ($objBrand) ? $objBrand->name : '' ?></div>
+                                            </div>
+                                        <?php } ?>
+                                        <?php if ($product->origin) { ?>
+                                            <div class="row">
+                                                <div class="col-3"><?php echo __('Origin') ?></div>
+                                                <div
+                                                    class="col-9"><?php echo ($product->origin) ? $product->origin : '' ?></div>
+                                            </div>
+                                        <?php } ?>
+                                        <?php if ($product->reference_price) { ?>
+                                            <div class="row">
+                                                <div class="col-3"><?php echo __('Reference price') ?></div>
+                                                <div
+                                                    class="col-9"><?php echo ($product->reference_price) ? $product->reference_price : '' ?></div>
+                                            </div>
+                                        <?php } ?>
+                                        <?php if ($product->unit) { ?>
+                                            <div class="row">
+                                                <div class="col-3"><?php echo __('Unit count') ?></div>
+                                                <div
+                                                    class="col-9"><?php echo ($product->unit) ? $product->unit : '' ?></div>
+                                            </div>
+                                        <?php } ?>
+                                        <?php if ($product->payment) { ?>
+                                            <div class="row">
+                                                <div class="col-3"><?php echo __('Payment') ?></div>
+                                                <div
+                                                    class="col-9"><?php echo ($product->payment) ? $product->payment : '' ?></div>
+                                            </div>
+                                        <?php } ?>
+                                        <?php if ($product->delivery) { ?>
+                                            <div class="row">
+                                                <div class="col-3"><?php echo __('Delivery') ?></div>
+                                                <div
+                                                    class="col-9"><?php echo ($product->delivery) ? $product->delivery : '' ?></div>
+                                            </div>
+                                        <?php } ?>
+                                        <?php if ($product->port) { ?>
+                                            <div class="row">
+                                                <div class="col-3"><?php echo __('Port') ?></div>
+                                                <div
+                                                    class="col-9"><?php echo ($product->port) ? $product->port : '' ?></div>
+                                            </div>
+                                        <?php } ?>
+                                        <?php if ($product->supply_ability) { ?>
+                                            <div class="row">
+                                                <div class="col-3"><?php echo __('Supply ability') ?></div>
+                                                <div
+                                                    class="col-9"><?php echo ($product->supply_ability) ? $product->supply_ability : '' ?></div>
+                                            </div>
+                                        <?php } ?>
+                                        <?php if ($product->packing) { ?>
+                                            <div class="row">
+                                                <div class="col-3"><?php echo __('Packing') ?></div>
+                                                <div
+                                                    class="col-9"><?php echo ($product->packing) ? $product->packing : '' ?></div>
+                                            </div>
+                                        <?php } ?>
+                                        <?php if ($product->special_req) { ?>
+                                            <div class="row">
+                                                <div class="col-3"><?php echo __('Special requirements') ?></div>
+                                                <div
+                                                    class="col-9"><?php echo ($product->special_req) ? $product->special_req : '' ?></div>
+                                            </div>
+                                        <?php } ?>
 
-                                </div>
-                                <div class="variants_selects">
-                                    <form action="#">
-                                        <div class="row">
-                                            <div class="col-2"><?php echo __('Name') ?></div>
-                                            <div class="col-10">
-                                                <input type="text" name="txt_name">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-2"><?php echo __('Email') ?></div>
-                                            <div class="col-10">
-                                                <input type="text" name="txt_email">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-2"><?php echo __('Sub') ?></div>
-                                            <div class="col-10">
-                                                <input type="text" name="txt_sub">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-2"><?php echo __('Your message') ?></div>
-                                            <div class="col-10">
-                                                <textarea rows="3" name="txt_mess"></textarea>
-                                            </div>
-                                        </div>
-
-                                        <div class="modal_add_to_cart">
-                                            <button type="button"><?php echo __('Inquiry Now') ?></button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="modal_social">
-                                    <h2><?php echo __('Share this product') ?></h2>
-                                    <ul>
-                                        <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li class="pinterest"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                        <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                        <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    </ul>
-                                </div>
+                                    </div>
+                                    <div class="variants_selects">
+                                        <?php include_partial('pageProduct/inquiryNowForm', array('form' => $form)) ?>
+                                    </div>
+                                    <div class="modal_social">
+                                        <h2><?php echo __('Share this product') ?></h2>
+                                        <ul>
+                                            <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                            <li class="pinterest"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                            <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a>
+                                            </li>
+                                            <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <div class="modal_title mb-10">
+                                        <h2><?php echo __('Data not found!') ?></h2>
+                                    </div>
+                                    <?php
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -203,7 +186,7 @@
             </div>
         </div>
     </div>
-</div>
+<!--</div>-->
 
 <!-- modal area end-->
 <style type="text/css">
@@ -241,7 +224,8 @@
         transition: 0.3s;
         cursor: pointer;
     }
-    form .modal_add_to_cart  button:hover {
+
+    form .modal_add_to_cart button:hover {
         background: #ffd54c;
         color: #ffffff;
         border-color: #ffd54c;
