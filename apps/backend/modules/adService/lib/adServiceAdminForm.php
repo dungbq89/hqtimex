@@ -32,6 +32,7 @@ class adServiceAdminForm extends BaseAdProductForm
             'category_id' => new sfWidgetFormInputText(array(), array('size' => 5, 'maxlength' => 5)),
             'is_active' => new sfWidgetFormInputCheckbox(),
             'lang' => new sfWidgetFormInputText(),
+            'slug' => new sfWidgetFormInputHidden(),
         ));
         $this->setValidators(array(
             'name' => new sfValidatorString(array('max_length' => 255, 'trim' => true)),
@@ -56,6 +57,7 @@ class adServiceAdminForm extends BaseAdProductForm
                 "max" => 99999), array('min' => $i18n->__('Giá trị phải là kiểu số nguyên dương'), 'max' => $i18n->__('Không được nhập quá 5 ký tự'))),
             'is_active' => new sfValidatorBoolean(array('required' => false)),
             'lang' => new sfValidatorString(array('max_length' => 10)),
+            'slug' => new sfValidatorPass()
         ));
 
         $this->widgetSchema->setNameFormat('ad_product[%s]');

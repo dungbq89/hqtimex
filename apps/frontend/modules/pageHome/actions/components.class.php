@@ -17,8 +17,8 @@ class pageHomeComponents extends sfComponents
     {
         $department = HqBrandTable::getBrandByParentID(null, 10);
         $data = array();
-        if($department && count($department)){
-            foreach ($department as $depart){
+        if ($department && count($department)) {
+            foreach ($department as $depart) {
                 $departChild = HqBrandTable::getBrandByParentID($depart['id'], 10);
                 $depart['childs'] = $departChild;
                 $data[] = $depart;
@@ -50,14 +50,24 @@ class pageHomeComponents extends sfComponents
     {
         $data = array();
         $categoriesHot = VtpProductsCategoryTable::getListCategoryHome();
-        if($categoriesHot){
-            foreach ($categoriesHot as $category){
+        if ($categoriesHot) {
+            foreach ($categoriesHot as $category) {
                 $productsHot = VtpProductsTable::getProductHotByCatId($category['id'], 10);
                 $category['products'] = $productsHot;
                 $data[] = $category;
             }
             $this->data = $data;
-        }else{
+        } else {
+            return sfView::NONE;
+        }
+    }
+
+    public function executeService($request)
+    {
+        $service = AdProductTable::getAllService(1, 2);
+        if (count($service)) {
+            $this->services = $service;
+        } else {
             return sfView::NONE;
         }
     }
