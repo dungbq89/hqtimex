@@ -29,14 +29,14 @@
 
 <?php include_component('moduleMenu', 'contentFooter'); ?>
 
-<!--<div class="modal fade" id="popup_modal_box" tabindex="-1" role="dialog" aria-hidden="true">-->
-<!--    <div class="modal-dialog modal-dialog-centered" role="document" id="popup_modal_box_content">-->
-<!--        --><?php //include_component('pageProduct', 'inquiryNowForm') ?>
-<!--    </div>-->
-<!--</div>-->
-<!---->
-<!---->
-<!--<div class="loading" style="display: none;">Loading</div>-->
+<div class="modal fade" id="popup_modal_box" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" id="popup_modal_box_content">
+        <?php include_component('pageProduct', 'inquiryNowForm') ?>
+    </div>
+</div>
+
+
+<div class="loading" style="display: none;">Loading</div>
 <!-- JS
 ============================================ -->
 

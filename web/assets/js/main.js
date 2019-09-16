@@ -632,6 +632,41 @@
     
     /*--- Clickable menu active ----*/
     const slinky = $('#menu').slinky()
-    
-    
-})(jQuery);	
+
+
+})(jQuery);
+
+$(document).on('click', '#bt_modal_add_to_cart', function (e) {
+    $('.loading').show();
+    var obj = $('#bt_modal_add_to_cart');
+    var data = $('#frm').serialize();
+    $.ajax({
+        url: obj.attr('data-url'),
+        type: 'post',
+        data: data,
+        success: function (response) {
+            $('.variants_selects').html(response.html)
+            $('.loading').hide();
+        },
+        error: function (request, status, err) {
+            $('.loading').hide();
+        }
+    });
+}) 
+
+$(document).on('click', '#bt_add_to_cart', function (e) {
+    $('.loading').show();
+    var obj = $(e.currentTarget);
+    $.ajax({
+        url: obj.attr('data-link'),
+        type: 'post',
+        data: {slug: obj.attr('data-slug')},
+        success: function (response) {
+            $('.loading').hide();
+            $('#popup_modal_box_content').html(response.html);
+        },
+        error: function (request, status, err) {
+            $('.loading').hide();
+        }
+    });
+})

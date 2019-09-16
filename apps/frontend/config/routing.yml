@@ -22,6 +22,12 @@ hq_brand:
 hq_product_detail:
   url: /product-detail/:slug
   param: {module: pageProduct, action: detail, slug: ""}
+ajax_inquiry_now:
+  url: /inquiry-now
+  param: {module: pageProduct, action: inquiryNow}
+ajax_popup_inquiry_now:
+  url: /popup-inquiry-now
+  param: {module: pageProduct, action: popupInquiryNow}
 
 
 # default rules

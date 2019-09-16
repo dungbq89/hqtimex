@@ -19,6 +19,11 @@ Doctrine_Manager::getInstance()->bindComponent('Booking', 'doctrine');
  * @property timestamp $to_time
  * @property integer $number_person
  * @property integer $number_room
+ * @property string $country
+ * @property string $address
+ * @property string $shipping_term
+ * @property string $subject
+ * @property string $requirement
  * 
  * @method string    getFullName()      Returns the current record's "full_name" value
  * @method string    getPhone()         Returns the current record's "phone" value
@@ -32,6 +37,11 @@ Doctrine_Manager::getInstance()->bindComponent('Booking', 'doctrine');
  * @method timestamp getToTime()        Returns the current record's "to_time" value
  * @method integer   getNumberPerson()  Returns the current record's "number_person" value
  * @method integer   getNumberRoom()    Returns the current record's "number_room" value
+ * @method string    getCountry()       Returns the current record's "country" value
+ * @method string    getAddress()       Returns the current record's "address" value
+ * @method string    getShippingTerm()  Returns the current record's "shipping_term" value
+ * @method string    getSubject()       Returns the current record's "subject" value
+ * @method string    getRequirement()   Returns the current record's "requirement" value
  * @method Booking   setFullName()      Sets the current record's "full_name" value
  * @method Booking   setPhone()         Sets the current record's "phone" value
  * @method Booking   setEmail()         Sets the current record's "email" value
@@ -44,6 +54,11 @@ Doctrine_Manager::getInstance()->bindComponent('Booking', 'doctrine');
  * @method Booking   setToTime()        Sets the current record's "to_time" value
  * @method Booking   setNumberPerson()  Sets the current record's "number_person" value
  * @method Booking   setNumberRoom()    Sets the current record's "number_room" value
+ * @method Booking   setCountry()       Sets the current record's "country" value
+ * @method Booking   setAddress()       Sets the current record's "address" value
+ * @method Booking   setShippingTerm()  Sets the current record's "shipping_term" value
+ * @method Booking   setSubject()       Sets the current record's "subject" value
+ * @method Booking   setRequirement()   Sets the current record's "requirement" value
  * 
  * @package    symfony
  * @subpackage model
@@ -117,6 +132,31 @@ abstract class BaseBooking extends sfDoctrineRecord
              'type' => 'integer',
              'notnull' => false,
              'length' => 8,
+             ));
+        $this->hasColumn('country', 'string', 255, array(
+             'type' => 'string',
+             'notnull' => false,
+             'length' => 255,
+             ));
+        $this->hasColumn('address', 'string', 255, array(
+             'type' => 'string',
+             'notnull' => false,
+             'length' => 255,
+             ));
+        $this->hasColumn('shipping_term', 'string', 1000, array(
+             'type' => 'string',
+             'notnull' => false,
+             'length' => 1000,
+             ));
+        $this->hasColumn('subject', 'string', 255, array(
+             'type' => 'string',
+             'notnull' => false,
+             'length' => 255,
+             ));
+        $this->hasColumn('requirement', 'string', 1000, array(
+             'type' => 'string',
+             'notnull' => false,
+             'length' => 1000,
              ));
     }
 
