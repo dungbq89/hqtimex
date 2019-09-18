@@ -1,5 +1,8 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
+service:
+  url: /service/:slug
+  param: {module: pageIntroduction, action: service}
 page_search:
   url:  /search
   param: { module: pageProduct, action: search}
@@ -28,6 +31,9 @@ ajax_inquiry_now:
 ajax_popup_inquiry_now:
   url: /popup-inquiry-now
   param: {module: pageProduct, action: popupInquiryNow}
+pageInquiryNow:
+  url: /inquiry-now/:slug
+  param: {module: pageProduct, action: pageInquiryNow}
 
 
 # default rules

@@ -43,4 +43,16 @@ class pageIntroductionActions extends sfActions
         }
     }
 
+    public function executeService(sfWebRequest $request)
+    {
+        $slug = $request->getParameter('slug');
+        $html = AdProductTable::getServiceBySlug($slug);
+        if($html){
+            $this->html = $html;
+        }
+        else{
+            return $this->redirect404();
+        }
+    }
+
 }

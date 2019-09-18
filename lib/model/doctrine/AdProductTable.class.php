@@ -19,12 +19,14 @@ class AdProductTable extends Doctrine_Table
 
     public static function getAllService($isActive, $limit)
     {
-        return AdProductTable::getInstance()->createQuery()
+        $query = AdProductTable::getInstance()->createQuery()
             ->select()
-            ->where('is_active=?', $isActive)
             ->orderBy('category_id DESC')
-            ->limit($limit)
-            ->fetchArray();
+            ->limit($limit);
+        if ($isActive != 2) {
+            $query->where('is_active=?', $isActive);
+        }
+        return $query->fetchArray();
     }
 
     public static function checkSlug($slug, $id)
@@ -34,5 +36,12 @@ class AdProductTable extends Doctrine_Table
             ->where('slug=?', $slug)
             ->andWhere('id<>?', $id);
         return $query;
+    }
+
+    public static function getServiceBySlug($slug)
+    {
+        $query = AdProductTable::getInstance()->createQuery()
+            ->where('slug=?', $slug);
+        return $query->fetchOne();
     }
 }

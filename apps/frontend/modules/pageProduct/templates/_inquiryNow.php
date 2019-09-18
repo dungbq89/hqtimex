@@ -79,7 +79,7 @@
                                     <div class="modal_description mb-15">
                                         <div class="row">
                                             <div class="col-12">
-                                                <p style="font-weight: bold"><?php echo __('Dried Ginger') ?> </p>
+                                                <p style="font-weight: bold"><?php echo __('Please fill full information to get quotation quickly') ?> </p>
                                             </div>
                                         </div>
                                         <?php if ($product->brand) {

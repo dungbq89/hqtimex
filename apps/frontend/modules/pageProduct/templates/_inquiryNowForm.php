@@ -3,7 +3,7 @@
         <h2><?php echo __('Inquiry successful') ?></h2>
     </div>
 <?php } ?>
-<form action="?" name="frm" id="frm">
+<form action="?" name="frm" id="frm" method="post">
     <?php echo $form->renderHiddenFields() ?>
     <div class="row">
         <div class="col-2"><?php echo __('Name (*)') ?></div>
@@ -41,12 +41,12 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-2"><?php echo __('Address') ?></div>
-        <div class="col-10">
-            <?php echo $form['address'] ?>
-        </div>
-    </div>
+<!--    <div class="row">-->
+<!--        <div class="col-2">--><?php //echo __('Address') ?><!--</div>-->
+<!--        <div class="col-10">-->
+<!--            --><?php //echo $form['address'] ?>
+<!--        </div>-->
+<!--    </div>-->
 
 
     <div class="row">
@@ -57,20 +57,20 @@
     </div>
 
 
-    <div class="row">
-        <div class="col-2"><?php echo __('Country') ?></div>
-        <div class="col-10">
-            <?php echo $form['country'] ?>
-        </div>
-    </div>
+<!--    <div class="row">-->
+<!--        <div class="col-2">--><?php //echo __('Country') ?><!--</div>-->
+<!--        <div class="col-10">-->
+<!--            --><?php //echo $form['country'] ?>
+<!--        </div>-->
+<!--    </div>-->
 
 
-    <div class="row">
-        <div class="col-2"><?php echo __('Subject') ?></div>
-        <div class="col-10">
-            <?php echo $form['subject'] ?>
-        </div>
-    </div>
+<!--    <div class="row">-->
+<!--        <div class="col-2">--><?php //echo __('Subject') ?><!--</div>-->
+<!--        <div class="col-10">-->
+<!--            --><?php //echo $form['subject'] ?>
+<!--        </div>-->
+<!--    </div>-->
 
     <div class="row">
         <div class="col-2"><?php echo __('Your requirement') ?></div>
@@ -79,14 +79,14 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-2"><?php echo __('Your message') ?></div>
-        <div class="col-10">
-            <?php echo $form['body'] ?>
-        </div>
-    </div>
+<!--    <div class="row">-->
+<!--        <div class="col-2">--><?php //echo __('Your message') ?><!--</div>-->
+<!--        <div class="col-10">-->
+<!--            --><?php //echo $form['body'] ?>
+<!--        </div>-->
+<!--    </div>-->
 
-    <div class="modal_add_to_cart" id="bt_modal_add_to_cart" data-url="<?php echo url_for1('@ajax_inquiry_now') ?>">
-        <button type="button"><?php echo __('Inquiry Now') ?></button>
+    <div class="modal_add_to_cart" id="bt_modal_add_to_cart1" data-url="<?php echo url_for1('@ajax_inquiry_now') ?>">
+        <button type="submit"><?php echo __('Inquiry Now') ?></button>
     </div>
 </form>

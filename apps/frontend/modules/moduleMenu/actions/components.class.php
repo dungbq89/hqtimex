@@ -20,6 +20,9 @@ class moduleMenuComponents extends sfComponents
             }
         }
         $this->data = $data;
+        //lay danh dach dich vu
+        $service = AdProductTable::getAllService(2, 10);
+        $this->services = $service;
     }
 
     public function executeMainMenuHome()

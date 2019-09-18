@@ -71,4 +71,9 @@ class pageHomeComponents extends sfComponents
             return sfView::NONE;
         }
     }
+
+    public function executeBrand($request)
+    {
+
+    }
 }

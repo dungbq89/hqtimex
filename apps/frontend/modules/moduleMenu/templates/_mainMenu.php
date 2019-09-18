@@ -17,22 +17,22 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="top_right text-right">
-                            <ul>
-                                <li class="language"><a href="javascript:void(0);"><img src="./assets/img/logo/language.png" alt="">en -
-                                        vi<i class="ion-ios-arrow-down"></i></a>
-                                    <ul class="dropdown_language">
-                                        <li><a href="<?php echo url_for('homepage', array('lang' => 'en')); ?>"><img src="./assets/img/logo/language.png"
-                                                             alt=""> <?php echo __('English'); ?></a></li>
-                                        <li><a href="<?php echo url_for('homepage', array('lang' => 'vi')); ?>"><img src="./assets/img/logo/language2.png"
-                                                             alt=""> <?php echo __('Vietnamese'); ?></a></li>
-                                    </ul>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
+<!--                    <div class="col-lg-6 col-md-6">-->
+<!--                        <div class="top_right text-right">-->
+<!--                            <ul>-->
+<!--                                <li class="language"><a href="javascript:void(0);"><img src="./assets/img/logo/language.png" alt="">en --->
+<!--                                        vi<i class="ion-ios-arrow-down"></i></a>-->
+<!--                                    <ul class="dropdown_language">-->
+<!--                                        <li><a href="--><?php //echo url_for('homepage', array('lang' => 'en')); ?><!--"><img src="./assets/img/logo/language.png"-->
+<!--                                                             alt=""> --><?php //echo __('English'); ?><!--</a></li>-->
+<!--                                        <li><a href="--><?php //echo url_for('homepage', array('lang' => 'vi')); ?><!--"><img src="./assets/img/logo/language2.png"-->
+<!--                                                             alt=""> --><?php //echo __('Vietnamese'); ?><!--</a></li>-->
+<!--                                    </ul>-->
+<!--                                </li>-->
+<!---->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
             </div>
         </div>
@@ -89,7 +89,19 @@
                                 </li>
 
                                 <li><a target="_blank" href="https://vn1188428656ldxm.trustpass.alibaba.com/?spm=a2700.7756200.0.0.52731afaQONw5B"><?php echo __('Alibaba Store'); ?></a></li>
-                                <li><a href="#"><?php echo __('Services'); ?></a></li>
+                                <li><a href="#"><?php echo __('Services'); ?><i class="fa fa-angle-down"></i></a>
+                                    <ul class="sub_menu pages">
+                                        <?php
+                                        if (isset($services) && count($services)) {
+                                            foreach ($services as $service) {
+                                                ?>
+                                                <li><a href="<?php echo url_for('service', array('slug' => $service['slug'])); ?>"> <?php echo $service['name']; ?></a></li>
+                                                <?php
+                                            }
+                                        }
+                                        ?>
+                                    </ul>
+                                </li>
                                 <li><a href="<?php echo url_for('policy'); ?>"><?php echo __('Policy'); ?></a></li>
                                 <li><a href="#"><?php echo __('News'); ?></a></li>
                                 <li><a href="<?php echo url_for('about_us'); ?>"><?php echo __('About Us'); ?></a></li>
@@ -121,20 +133,20 @@
                     <div class="canvas_close">
                         <a href="javascript:void(0)"><i class="ion-android-close"></i></a>
                     </div>
-                    <div class="top_right text-right">
-                        <ul>
-                            <li class="language"><a href="javascript:void(0);"><img src="./assets/img/logo/language.png" alt="">en - vi<i
-                                            class="ion-ios-arrow-down"></i></a>
-                                <ul class="dropdown_language">
-                                    <li><a href="<?php echo url_for('homepage', array('lang' => 'en')); ?>"><img
-                                                    src="./assets/img/logo/language.png"
-                                                    alt=""><?php echo __('English'); ?></a></li>
-                                    <li><a href="<?php echo url_for('homepage', array('lang' => 'vi')); ?>"><img src="./assets/img/logo/language2.png"
-                                                         alt=""><?php echo __('Vietnamese'); ?></a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+<!--                    <div class="top_right text-right">-->
+<!--                        <ul>-->
+<!--                            <li class="language"><a href="javascript:void(0);"><img src="./assets/img/logo/language.png" alt="">en - vi<i-->
+<!--                                            class="ion-ios-arrow-down"></i></a>-->
+<!--                                <ul class="dropdown_language">-->
+<!--                                    <li><a href="--><?php //echo url_for('homepage', array('lang' => 'en')); ?><!--"><img-->
+<!--                                                    src="./assets/img/logo/language.png"-->
+<!--                                                    alt="">--><?php //echo __('English'); ?><!--</a></li>-->
+<!--                                    <li><a href="--><?php //echo url_for('homepage', array('lang' => 'vi')); ?><!--"><img src="./assets/img/logo/language2.png"-->
+<!--                                                         alt="">--><?php //echo __('Vietnamese'); ?><!--</a></li>-->
+<!--                                </ul>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
                     <div class="Offcanvas_follow">
                         <label>Follow Us:</label>
                         <ul class="follow_link">
@@ -172,7 +184,19 @@
                             </li>
 
                             <li><a target="_blank" href="https://vn1188428656ldxm.trustpass.alibaba.com/?spm=a2700.7756200.0.0.52731afaQONw5B"><?php echo __('Alibaba Store'); ?></a></li>
-                            <li><a href="#"><?php echo __('Services'); ?></a></li>
+                            <li><a href="#"><?php echo __('Services'); ?></a>
+                                <ul>
+                                    <?php
+                                    if (isset($services) && count($services)) {
+                                        foreach ($services as $service) {
+                                            ?>
+                                            <li><a href="<?php echo url_for('service', array('slug' => $service['slug'])); ?>"> <?php echo $service['name']; ?></a></li>
+                                            <?php
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </li>
                             <li><a href="<?php echo url_for('policy'); ?>"><?php echo __('Policy'); ?></a></li>
                             <li><a href="#"><?php echo __('News'); ?></a></li>
                             <li><a href="<?php echo url_for('about_us'); ?>"><?php echo __('About Us'); ?></a></li>
