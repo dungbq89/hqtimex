@@ -16,7 +16,7 @@ class pageIntroductionActions extends sfActions
         if($lang == 'en'){
             $html = AdHtmlTable::getHtmlById(61);
         }else{
-            $html = AdHtmlTable::getHtmlById(62);
+            $html = AdHtmlTable::getHtmlById(61);
         }
         if($html){
             $this->html = $html;

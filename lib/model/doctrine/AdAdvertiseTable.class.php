@@ -75,8 +75,8 @@ class AdAdvertiseTable extends Doctrine_Table
             ->andWhere('l.page=?', $page);
         if ($template)
             $query->andWhere('l.template=?', $template);
-        $query->andWhere('i.is_active=1')
-            ->andWhere('a.lang=?', sfContext::getInstance()->getUser()->getCulture());
+        $query->andWhere('i.is_active=1');
+//            ->andWhere('a.lang=?', sfContext::getInstance()->getUser()->getCulture());
         $result = $query->fetchArray();
         if (!empty($result)) {
             return $result[0];
