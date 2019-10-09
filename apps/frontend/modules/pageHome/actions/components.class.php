@@ -43,7 +43,7 @@ class pageHomeComponents extends sfComponents
 
     public function executeSlideShow($request)
     {
-
+        $this->slide = AdAdvertiseTable::getAdvertiseV2('homepage');
     }
 
     public function executeProductCategoryHot($request)
@@ -57,6 +57,16 @@ class pageHomeComponents extends sfComponents
                 $data[] = $category;
             }
             $this->data = $data;
+        } else {
+            return sfView::NONE;
+        }
+    }
+
+    public function executeService($request)
+    {
+        $service = AdProductTable::getAllService(1, 2);
+        if (count($service)) {
+            $this->services = $service;
         } else {
             return sfView::NONE;
         }

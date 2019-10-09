@@ -228,7 +228,7 @@ class VtpProductsCategoryTable extends Doctrine_Table
         $sql = VtpProductsCategoryTable::getInstance()->createQuery('a')
             ->where('a.is_active=1')
             ->andWhere('a.slug=?', $slug)
-            ->andWhere('a.lang=?', sfContext::getInstance()->getUser()->getCulture())
+//            ->andWhere('a.lang=?', sfContext::getInstance()->getUser()->getCulture())
             ->orderBy('a.priority asc');
         return $sql->fetchOne();
     }

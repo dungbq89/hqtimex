@@ -237,7 +237,7 @@ class VtpProductsTable extends Doctrine_Table
         $query = VtpProductsTable::getInstance()->createQuery()
             ->where('category_id=?', $catId)
             ->andWhere('is_active=?', VtCommonEnum::NUMBER_ONE)
-            ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
+//            ->andWhere('lang=?', sfContext::getInstance()->getUser()->getCulture())
             ->limit($limit)
             ->orderBy('updated_at DESC')
             ->fetchArray();

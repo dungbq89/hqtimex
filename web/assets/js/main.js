@@ -658,7 +658,7 @@ $(document).on('click', '#bt_modal_add_to_cart', function (e) {
             $('.loading').hide();
         }
     });
-})
+}) 
 
 $(document).on('click', '#bt_add_to_cart', function (e) {
     $('.loading').show();

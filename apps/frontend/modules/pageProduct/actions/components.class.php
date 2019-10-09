@@ -16,6 +16,7 @@ class pageProductComponents extends sfComponents
     }
 
     public function executeInquiryNowForm(sfWebRequest $request){
-        $this->form = new InquiryNowFront();
+        $form = new InquiryNowFront();
+        $this->form = $form;
     }
 }

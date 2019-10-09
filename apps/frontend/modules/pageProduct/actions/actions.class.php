@@ -85,7 +85,7 @@ class pageProductActions extends sfActions
     public function executeSearch(sfWebRequest $request)
     {
         $this->queryName = $queryName = $request->getParameter('keyword');
-        if($queryName){
+        if ($queryName) {
             $this->keyword = $queryName;
             $this->url_paging = 'page_search';
             $this->page = $this->getRequestParameter('page', 1);
@@ -129,9 +129,9 @@ class pageProductActions extends sfActions
             $obj->setEmail($values['email']);
             $obj->setCountry($values['country']);
             $obj->setBody($values['body']);
-            $obj->setAddress($values['address']);
+//            $obj->setAddress($values['address']);
             $obj->setShippingTerm($values['shipping_term']);
-            $obj->setSubject($values['subject']);
+//            $obj->setSubject($values['subject']);
             $obj->setRequirement($values['requirement']);
             $obj->setLang(sfContext::getInstance()->getUser()->getCulture());
             $obj->save();
@@ -148,6 +148,49 @@ class pageProductActions extends sfActions
             'html' => $html,
         ];
         return $this->renderText(json_encode($arrReturn));
+    }
+
+    public function executePageInquiryNow(sfWebRequest $request)
+    {
+        $i18n = sfContext::getInstance()->getI18N();
+        $slug = $request->getParameter('slug');
+        $form = new InquiryNowFront();
+        $product = false;
+        if ($slug) {
+            // lay chi tiet san pham
+            $product = VtpProductsTable::getProductbySlug($slug, 0);
+            if ($product) {
+                $this->product = $product;
+            }
+        }
+        if (!$product) {
+            $this->forward404($i18n->__('Page not found!'));
+        }
+        $message = "";
+        $valid = '';
+        if ($request->isMethod('post')) {
+            $values = $request->getParameter($form->getName());
+            $form->bind(($values));
+            if ($form->isValid()) {
+                $obj = new Booking();
+                $obj->setFullName($values['full_name']);
+                $obj->setPhone($values['phone']);
+                $obj->setEmail($values['email']);
+                $obj->setCountry($values['country']);
+                $obj->setBody($values['body']);
+//                $obj->setAddress($values['address']);
+                $obj->setShippingTerm($values['shipping_term']);
+//                $obj->setSubject($values['subject']);
+                $obj->setRequirement($values['requirement']);
+                $obj->setLang(sfContext::getInstance()->getUser()->getCulture());
+                $obj->save();
+                $valid = 0;
+            }else{
+                $valid = 1;
+            }
+        }
+        $this->form = $form;
+        $this->valid = $valid;
     }
 
     public function executePopupInquiryNow(sfWebRequest $request)
@@ -170,4 +213,5 @@ class pageProductActions extends sfActions
         ];
         return $this->renderText(json_encode($arrReturn));
     }
+
 }

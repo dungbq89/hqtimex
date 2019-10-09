@@ -18,9 +18,9 @@ class InquiryNowFront extends BaseBookingForm
             'email' => new sfWidgetFormInputText(),
             'phone' => new sfWidgetFormInputText(),
             'body' => new sfWidgetFormTextarea(),
-            'address' => new sfWidgetFormInputText(),
+//            'address' => new sfWidgetFormInputText(),
             'shipping_term' => new sfWidgetFormInputText(),
-            'subject' => new sfWidgetFormInputText(),
+//            'subject' => new sfWidgetFormInputText(),
             'requirement' => new sfWidgetFormTextarea(),
             'lang' => new sfWidgetFormInputText(),
             'country' => new sfWidgetFormInputText(),
@@ -37,9 +37,9 @@ class InquiryNowFront extends BaseBookingForm
             'body' => new sfValidatorString(array('required' => false)),
             'lang' => new sfValidatorString(array('max_length' => 10)),
             'country' => new sfValidatorPass(),
-            'address' => new sfValidatorPass(),
+//            'address' => new sfValidatorPass(),
             'shipping_term' => new sfValidatorPass(),
-            'subject' => new sfValidatorPass(),
+//            'subject' => new sfValidatorPass(),
             'requirement' => new sfValidatorPass(),
         ));
         $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);

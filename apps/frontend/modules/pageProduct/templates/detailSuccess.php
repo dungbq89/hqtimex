@@ -95,9 +95,11 @@ $pathImg = '/uploads/' . sfConfig::get('app_product_images') . $product->image_p
                         <div class="product_variant quantity">
                             <!--                            <label>quantity</label>-->
                             <!--                            <input min="0" max="100" value="1" type="number">-->
-                            <button class="button" type="button" data-toggle="modal"
-                                    data-target="#modal_box"><?php echo __('Inquiry Now') ?></button>
-
+<!--                            <button class="button" type="button" data-toggle="modal"-->
+<!--                                    data-target="#modal_box">--><?php //echo __('Inquiry Now') ?><!--</button>-->
+                            <a href="<?php echo url_for1('@pageInquiryNow?slug='.$product->slug) ?>">
+                            <button class="button" type="button"><?php echo __('Inquiry Now') ?></button>
+                            </a>
                         </div>
                     </form>
                     <div class="priduct_social">

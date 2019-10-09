@@ -5,11 +5,11 @@
             <div class="col-12">
                 <div class="call_action_inner">
                     <div class="call_text">
-                        <h3>We Have <span>Recommendations</span>  for You</h3>
-                        <p>Take 30% off when you spend $150 or more with code Autima11</p>
+                        <h3>We Are Available On <span>ALIBABA</span> Website</h3>
+                        <p>More the connection to the world</p>
                     </div>
                     <div class="discover_now">
-                        <a href="#">discover now</a>
+                        <a target="_blank" href="https://vn1188428656ldxm.trustpass.alibaba.com/?spm=a2700.7756200.0.0.52731afaQONw5B">discover now</a>
                     </div>
                     <div class="link_follow">
                         <ul>
@@ -34,13 +34,13 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="widgets_container contact_us">
                         <div class="footer_logo">
-                            <a href="#"><img src="./assets/img/logo/logo.png" alt=""></a>
+                            <a href="#"><img src="../images/logo.png" alt="logo" style="height: 60px;"></a>
                         </div>
                         <div class="footer_contact">
-                            <p>We are a team of designers and developers that
-                                create high quality Magento, Prestashop, Opencart...</p>
-                            <p><span>Address</span> 4710-4890 Breckinridge St, UK Burlington, VT 05401</p>
-                            <p><span>Need Help?</span>Call: 1-800-345-6789</p>
+                            <p>HQT INTERNATIONAL IMPORT EXPORT JOINT STOCK COMPANY</p>
+                            <p><span>Address: </span> 82 Chua Lang street, Dong Da district, HANOI, VIETNAM</p>
+                            <p><span>HOTLINE: </span>+84 906246584 (WHATSAPP/VIBER/ZALO)</p>
+                            <p><span>Need Help?</span>Call: 84243 5527676</p>
                         </div>
                     </div>
                 </div>
@@ -49,27 +49,29 @@
                         <h3>Information</h3>
                         <div class="footer_menu">
                             <ul>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="blog.html">Delivery Information</a></li>
-                                <li><a href="contact.html">Privacy Policy</a></li>
-                                <li><a href="services.html">Terms & Conditions</a></li>
-                                <li><a href="#">Returns</a></li>
-                                <li><a href="#">Gift Certificates</a></li>
+                                <li><a target="_blank" href="http://www.customs.gov.vn/">Vietnam Customs</a></li>
+                                <li><a target="_blank" href="https://www.vietnamtradeportal.gov.vn/">Vietnam Trade Portal</a></li>
+                                <li><a target="_blank" href="http://vietnamexport.com/">Vietnam Export</a></li>
+                                <li><a target="_blank" href="http://www.vietrade.gov.vn/">Viet Trade</a></li>
+                                <li><a target="_blank" href="http://www.ecosys.gov.vn/Homepage/HomePage.aspx">Issue C/O online</a></li>
+                                <li><a target="_blank" href="https://portal.vietcombank.com.vn/Personal/TG/Pages/ty-gia.aspx?devicechannel=default">Exchange  Rate</a></li>
+
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6">
                     <div class="widgets_container widget_menu">
-                        <h3>Extras</h3>
+                        <h3><?php echo __('Page Map'); ?></h3>
                         <div class="footer_menu">
                             <ul>
-                                <li><a href="#">Returns</a></li>
-                                <li><a href="#">Order History</a></li>
-                                <li><a href="wishlist.html">Wish List</a></li>
-                                <li><a href="#">Newsletter</a></li>
-                                <li><a href="#">Affiliate</a></li>
-                                <li><a href="faq.html">Specials</a></li>
+                                <li><a href="<?php echo url_for('homepage'); ?>"><?php echo __('Home'); ?></a></li>
+                                <li><a href="#"><?php echo __('Products'); ?></a></li>
+                                <li><a href=""><?php echo __('Services'); ?></a></li>
+                                <li><a href="<?php echo url_for('policy'); ?>"><?php echo __('Policy'); ?></a></li>
+                                <li><a href=""><?php echo __('News'); ?></a></li>
+                                <li><a href="<?php echo url_for('about_us'); ?>"><?php echo __('About Us'); ?></a></li>
+                                <li><a href="<?php echo url_for('contact_us'); ?>"><?php echo __('Contact Us'); ?></a></li>
                             </ul>
                         </div>
                     </div>
@@ -90,14 +92,9 @@
         </div>
         <div class="footer_bottom">
             <div class="row">
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-12 col-md-12">
                     <div class="copyright_area">
-                        <p>Copyright &copy; 2019 <a href="#">Autima</a>  All Right Reserved.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="footer_payment text-right">
-                        <a href="#"><img src="./assets/img/icon/payment.png" alt=""></a>
+                        <p style="text-align: center;">Copyright &copy; 2019 <a href="#">HQTIMEX</a>  All Right Reserved.</p>
                     </div>
                 </div>
             </div>

@@ -44,15 +44,15 @@
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-6">
                     <div class="logo">
-                        <a href="<?php echo url_for('homepage'); ?>"><img src="../images/logo.png" alt=""></a>
+                        <a href="<?php echo url_for('homepage'); ?>"><img src="../images/logo.png" alt="" style="height: 60px;"></a>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-6">
                     <div class="middel_right">
                         <div class="search-container">
-                            <form action="#">
+                            <form action="<?php echo url_for1('@page_search') ?>" method="get">
                                 <div class="search_box">
-                                    <input placeholder="<?php echo __('Search entire store here'); ?> ..." type="text">
+                                    <input placeholder="<?php echo __('Search entire store here'); ?> ..." type="search" name="keyword" id="keyword">
                                     <button type="submit"><i class="ion-ios-search-strong"></i></button>
                                 </div>
                             </form>
@@ -73,14 +73,14 @@
                         <nav>
                             <ul>
 
-                                <li><a href="#"><?php echo __('Home'); ?></a></li>
+                                <li><a href="<?php echo url_for('homepage'); ?>"><?php echo __('Home'); ?></a></li>
                                 <li><a href="#"><?php echo __('Products'); ?><i class="fa fa-angle-down"></i></a>
                                     <ul class="sub_menu pages">
                                         <?php
                                         if (isset($data) && count($data)) {
                                             foreach ($data as $cate) {
                                                 ?>
-                                                <li><a href="#"> <?php echo $cate['name']; ?></a></li>
+                                                <li><a href="<?php echo url_for('hq_product', array('slug' => $cate['slug'])); ?>"> <?php echo $cate['name']; ?></a></li>
                                                 <?php
                                             }
                                         }
@@ -90,6 +90,7 @@
 
                                 <li><a target="_blank" href="https://vn1188428656ldxm.trustpass.alibaba.com/?spm=a2700.7756200.0.0.52731afaQONw5B"><?php echo __('Alibaba Store'); ?></a></li>
                                 <li><a href="#"><?php echo __('Services'); ?></a></li>
+                                <li><a href="<?php echo url_for('policy'); ?>"><?php echo __('Policy'); ?></a></li>
                                 <li><a href="#"><?php echo __('News'); ?></a></li>
                                 <li><a href="<?php echo url_for('about_us'); ?>"><?php echo __('About Us'); ?></a></li>
                                 <li><a href="<?php echo url_for('contact_us'); ?>"><?php echo __('Contact Us'); ?></a></li>
@@ -155,17 +156,24 @@
                     <div id="menu" class="text-left ">
                         <ul>
 
-                            <li><a href="#"><?php echo __('Home'); ?></a></li>
+                            <li><a href="<?php echo url_for('homepage'); ?>"><?php echo __('Home'); ?></a></li>
                             <li><a href="#"><?php echo __('Products'); ?></a>
                                 <ul>
-                                    <li><a href="blog-details.html">blog details</a></li>
-                                    <li><a href="blog-fullwidth.html">blog fullwidth</a></li>
-                                    <li><a href="blog-sidebar.html">blog sidebar</a></li>
+                                    <?php
+                                    if (isset($data) && count($data)) {
+                                        foreach ($data as $cate) {
+                                            ?>
+                                            <li><a href="<?php echo url_for('hq_product', array('slug' => $cate['slug'])); ?>"> <?php echo $cate['name']; ?></a></li>
+                                            <?php
+                                        }
+                                    }
+                                    ?>
                                 </ul>
                             </li>
 
                             <li><a target="_blank" href="https://vn1188428656ldxm.trustpass.alibaba.com/?spm=a2700.7756200.0.0.52731afaQONw5B"><?php echo __('Alibaba Store'); ?></a></li>
                             <li><a href="#"><?php echo __('Services'); ?></a></li>
+                            <li><a href="<?php echo url_for('policy'); ?>"><?php echo __('Policy'); ?></a></li>
                             <li><a href="#"><?php echo __('News'); ?></a></li>
                             <li><a href="<?php echo url_for('about_us'); ?>"><?php echo __('About Us'); ?></a></li>
                             <li><a href="<?php echo url_for('contact_us'); ?>"><?php echo __('Contact Us'); ?></a></li>

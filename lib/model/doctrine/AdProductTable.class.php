@@ -16,4 +16,23 @@ class AdProductTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('AdProduct');
     }
+
+    public static function getAllService($isActive, $limit)
+    {
+        return AdProductTable::getInstance()->createQuery()
+            ->select()
+            ->where('is_active=?', $isActive)
+            ->orderBy('category_id DESC')
+            ->limit($limit)
+            ->fetchArray();
+    }
+
+    public static function checkSlug($slug, $id)
+    {
+        $query = AdProductTable::getInstance()->createQuery()
+            ->select('slug')
+            ->where('slug=?', $slug)
+            ->andWhere('id<>?', $id);
+        return $query;
+    }
 }
