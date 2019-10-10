@@ -103,7 +103,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="<?php echo url_for('policy'); ?>"><?php echo __('Policy'); ?></a></li>
-                                <li><a href="#"><?php echo __('News'); ?></a></li>
+                                <li><a href="<?php echo url_for1('@hq_news') ?>"><?php echo __('News'); ?></a></li>
                                 <li><a href="<?php echo url_for('about_us'); ?>"><?php echo __('About Us'); ?></a></li>
                                 <li><a href="<?php echo url_for('contact_us'); ?>"><?php echo __('Contact Us'); ?></a></li>
                             </ul>
@@ -198,7 +198,7 @@
                                 </ul>
                             </li>
                             <li><a href="<?php echo url_for('policy'); ?>"><?php echo __('Policy'); ?></a></li>
-                            <li><a href="#"><?php echo __('News'); ?></a></li>
+                            <li><a href="<?php echo url_for1('@hq_news') ?>"><?php echo __('News'); ?></a></li>
                             <li><a href="<?php echo url_for('about_us'); ?>"><?php echo __('About Us'); ?></a></li>
                             <li><a href="<?php echo url_for('contact_us'); ?>"><?php echo __('Contact Us'); ?></a></li>
                         </ul>

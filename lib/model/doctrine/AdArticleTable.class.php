@@ -105,6 +105,16 @@ class AdArticleTable extends Doctrine_Table
             ->fetchOne();
     }
 
+    public static function getArticleBySlugV2($slug)
+    {
+        return AdArticleTable::getInstance()->createQuery('a')
+            ->where('a.is_active=?', VtCommonEnum::NUMBER_TWO)
+            ->andWhere('a.published_time is null or a.published_time <= ?', date('Y-m-d H:i:s', time()))
+            ->andWhere('(a.expiredate_time is null or a.expiredate_time >= ?)', date('Y-m-d H:i:s', time()))
+            ->addWhere('a.slug=?', $slug)
+            ->fetchOne();
+    }
+
 
     //danh sách cái tin tưc cùng chuyên mục
     public static function getArticleRelatedByCatId( $catId, $article_id, $limit)

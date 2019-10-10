@@ -34,6 +34,18 @@ ajax_popup_inquiry_now:
 pageInquiryNow:
   url: /inquiry-now/:slug
   param: {module: pageProduct, action: pageInquiryNow}
+hq_news:
+  url: /news/:page
+  param: {module: pageNews, action: index, page: 1, slug: ""}
+hq_news_search:
+  url: /search-new
+  param: {module: pageNews, action: searchNew}
+hq_new_category:
+  url: /category/:slug/:page
+  param: {module: pageNews, action: listNews, page: 1, slug: ""}
+hq_new_detail:
+  url: /new-detail/:slug
+  param: {module: pageNews, action: detail, slug: ""}
 
 
 # default rules
