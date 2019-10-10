@@ -16,4 +16,10 @@ class AdConfigTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('AdConfig');
     }
+    public static function getAllConfig()
+    {
+        return AdConfigTable::getInstance()->createQuery()
+            ->where('is_active=1')
+            ->fetchArray();
+    }
 }

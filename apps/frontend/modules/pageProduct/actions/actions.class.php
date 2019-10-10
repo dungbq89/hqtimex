@@ -22,6 +22,10 @@ class pageProductActions extends sfActions
         if ($slug && $page) {
             $category = VtpProductsCategoryTable::getCategoryProductBySlugV3($slug);
             if ($category) {
+                $seoCat = VtSEO::getSeoCategory($category);
+                if($seoCat){
+                    $this->returnHtmlSeoPage($seoCat);
+                }
                 $pager = new sfDoctrinePager('VtpProducts', $limit);
                 $pager->setQuery(VtpProductsTable::getAllProductByCategory($category->id));
                 $pager->setPage($page);
@@ -74,6 +78,10 @@ class pageProductActions extends sfActions
             // lay chi tiet san pham
             $product = VtpProductsTable::getProductbySlug($slug, 0);
             if ($product) {
+                $seoCat = VtSEO::getSeoProductDetail($product);
+                if($seoCat){
+                    $this->returnHtmlSeoPage($seoCat);
+                }
                 $this->product = $product;
             }
         }
@@ -129,9 +137,9 @@ class pageProductActions extends sfActions
             $obj->setEmail($values['email']);
             $obj->setCountry($values['country']);
             $obj->setBody($values['body']);
-            $obj->setAddress($values['address']);
+//            $obj->setAddress($values['address']);
             $obj->setShippingTerm($values['shipping_term']);
-            $obj->setSubject($values['subject']);
+//            $obj->setSubject($values['subject']);
             $obj->setRequirement($values['requirement']);
             $obj->setLang(sfContext::getInstance()->getUser()->getCulture());
             $obj->save();
@@ -148,6 +156,48 @@ class pageProductActions extends sfActions
             'html' => $html,
         ];
         return $this->renderText(json_encode($arrReturn));
+    }
+
+    public function executePageInquiryNow(sfWebRequest $request)
+    {
+        $i18n = sfContext::getInstance()->getI18N();
+        $slug = $request->getParameter('slug');
+        $form = new InquiryNowFront();
+        $product = false;
+        if ($slug) {
+            // lay chi tiet san pham
+            $product = VtpProductsTable::getProductbySlug($slug, 0);
+            if ($product) {
+                $this->product = $product;
+            }
+        }
+        if (!$product) {
+            $this->forward404($i18n->__('Page not found!'));
+        }
+        $message = "";
+        if ($request->isMethod('post')) {
+            $values = $request->getParameter($form->getName());
+            $form->bind(($values));
+            if ($form->isValid()) {
+                $obj = new Booking();
+                $obj->setFullName($values['full_name']);
+                $obj->setPhone($values['phone']);
+                $obj->setEmail($values['email']);
+                $obj->setCountry($values['country']);
+                $obj->setBody($values['body']);
+//                $obj->setAddress($values['address']);
+                $obj->setShippingTerm($values['shipping_term']);
+//                $obj->setSubject($values['subject']);
+                $obj->setRequirement($values['requirement']);
+                $obj->setLang(sfContext::getInstance()->getUser()->getCulture());
+                $obj->save();
+                $valid = 0;
+            }else{
+                $valid = 1;
+            }
+        }
+        $this->form = $form;
+        $this->valid = $valid;
     }
 
     public function executePopupInquiryNow(sfWebRequest $request)

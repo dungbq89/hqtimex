@@ -1,3 +1,11 @@
+ad_config:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdConfig
+    module:               adConfig
+    prefix_path:          /adConfig
+    column:               id
+    with_wildcard_routes: true
 ad_product:
   class: sfDoctrineRouteCollection
   options:

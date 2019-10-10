@@ -88,6 +88,9 @@ all:
             Danh sách quyền hạn:
               route: sf_guard_permission
               icon: users6.png
+            Quản lý cấu hình:
+              route: ad_config
+              icon: users6.png
         Ngôn ngữ:
           dropdown:
             Tiếng Việt:
